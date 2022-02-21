@@ -888,4 +888,39 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
   color: var(--gradientLTR);
 }
 
+.why {
+  background: var(--gradientLTR);
+  min-height: calc(100vh - 94px);
+  position: relative;
+}
+.why h4 {
+  color: var(--main);
+  font-weight: 400;
+  font-size: 2.5rem;
+}
+.why .carousel .item {
+  min-height: auto;
+  background: none;
+}
+.why .carousel .section h3 {
+  font-weight: 400;
+  font-size: 2rem;
+}
+.why .carousel .owl-nav {
+  display: none;
+}
+.why .why-position {
+  position: absolute;
+  left: 0;
+  top: 10%;
+}
+@media (min-width : 0px) and (max-width : 575.98px) {
+  .why .why-position {
+    display: none;
+  }
+  .why .carousel__slide {
+    padding: 0;
+  }
+}
+
 /*# sourceMappingURL=style.css.map */
