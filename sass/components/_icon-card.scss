@@ -1,0 +1,20 @@
+@use  './../tools' as *;
+
+.icon-card{
+    min-height: 250px;
+    padding: 10px;
+    //
+    @extend %center-f-column-start;
+    &__img{
+        margin-bottom: 25px;
+    }
+    &__text{
+        //max-width: 350px;
+        //padding:20px 0; 
+        flex-grow: 1;
+        p{
+            @extend %fs-large_desktop-md;
+            color: get(white);
+        }
+    }
+}

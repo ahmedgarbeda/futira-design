@@ -102,23 +102,31 @@ header .navigation__menu > li a, .section__text__subtitle {
 }
 
 @media (min-width : 991.99px) {
-  .section__text.p-18 p {
+  .icon-card__text p, .section__text.p-18 p {
     font-size: 1.125rem !important;
   }
 
-  .section__text p-22 {
+  .section__text.p-22 p {
+    font-size: 1.25rem !important;
+  }
+
+  .what__cards__item__text__body p {
     font-size: 1.375rem !important;
   }
 
-  .section__text__title {
+  .section__text.p-24 p {
+    font-size: 1.5rem !important;
+  }
+
+  .section__text__title, .section__text.p-30 p {
     font-size: 1.875rem !important;
   }
 
-  .section__subtitle {
+  .what__cards__item__text__subtitle, .section__subtitle {
     font-size: 2.1875rem !important;
   }
 
-  .section__text p {
+  .what__cards__item__text__title, .section__text p {
     font-size: 2.5rem !important;
   }
 
@@ -166,6 +174,13 @@ header .navigation__menu > li a, .section__text__subtitle {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+.icon-card {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  flex-direction: column;
 }
 
 .btn-main.large {
@@ -230,21 +245,15 @@ html[dir=rtl] .btn-main {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
   color: var(--main);
 }
-.bgc-1 {
-  background-color: first !important;
-}
-.bgc-2 {
-  background-color: second !important;
+.background-main {
+  background-color: var(--main);
 }
 
-.clr-1 {
-  color: first !important;
-}
-.clr-2 {
-  color: second !important;
-}
-.clr-white {
+.color-white {
   color: var(--bs-white);
+}
+.color-main {
+  color: var(--main);
 }
 
 .linkedin {
@@ -350,6 +359,26 @@ html[dir=ltr] .section__text {
 
 .reverse {
   flex-direction: row-reverse;
+}
+
+.min-height-20 {
+  min-height: calc(20vh - 94px);
+}
+
+.min-height-40 {
+  min-height: calc(40vh - 94px);
+}
+
+.min-height-60 {
+  min-height: calc(60vh - 94px);
+}
+
+.min-height-80 {
+  min-height: calc(80vh - 94px);
+}
+
+.min-height-100 {
+  min-height: calc(100vh - 94px);
 }
 
 header {
@@ -497,6 +526,20 @@ header .navigation__menu__mobile {
   header .navigation__menu__mobile {
     display: none;
   }
+}
+
+.icon-card {
+  min-height: 250px;
+  padding: 10px;
+}
+.icon-card__img {
+  margin-bottom: 25px;
+}
+.icon-card__text {
+  flex-grow: 1;
+}
+.icon-card__text p {
+  color: var(--bs-white);
 }
 
 .carousel .item {
@@ -680,16 +723,30 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
   border-right: 2px solid var(--yellow);
 }
 .what__grad-top__col {
+  padding: 50px;
+  cursor: pointer;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
   min-height: calc(100vh - 94px);
+  max-height: 100vh;
 }
 .what__grad-top__col .to {
   align-items: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .what__grad-top__col .to img {
   width: 50px;
+  height: 50px;
 }
 .what__grad-top__col.img-yellow-12 {
   background-image: url("../images/Asset 12.png");
@@ -702,7 +759,63 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
 }
 .what__grad-top__col .section__text {
   display: none;
-  height: 0;
+  flex-grow: 1;
+  overflow: hidden;
+}
+.what__cards {
+  background-image: -webkit-linear-gradient(bottom, var(--bs-white), var(--main));
+}
+.what__cards__item {
+  background-color: var(--main);
+  padding: 55px 30px;
+  -webkit-border-radius: 50px;
+  -o-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  -webkit-box-shadow: -5px 5px 0px 0px black;
+  -o-box-shadow: -5px 5px 0px 0px black;
+  -ms-box-shadow: -5px 5px 0px 0px black;
+  -moz-box-shadow: -5px 5px 0px 0px black;
+  box-shadow: -5px 5px 0px 0px black;
+  cursor: pointer;
+}
+.what__cards__item:hover {
+  background-image: -webkit-linear-gradient(top, var(--yellow-light), var(--yellow));
+}
+.what__cards__item:hover .what__cards__item__text__title, .what__cards__item:hover .what__cards__item__text__subtitle, .what__cards__item:hover .what__cards__item__text__body p {
+  color: var(--main);
+}
+.what__cards__item__img {
+  margin-bottom: 20px;
+}
+.what__cards__item__img img {
+  height: 55px;
+}
+.what__cards__item__text__subtitle {
+  color: var(--bs-white);
+  font-weight: 300;
+}
+.what__cards__item__text__title {
+  color: var(--bs-white);
+  font-weight: 600;
+}
+.what__cards__item__text__body {
+  display: none;
+}
+.what__cards__item__text__body p {
+  color: var(--bs-white);
+}
+
+.show-modal-what-3 {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  opacity: 0;
 }
 
 .who {

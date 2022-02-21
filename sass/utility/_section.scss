@@ -71,9 +71,25 @@
             line-height: 1.9;
             color: get(main);
             @extend %fs-large_desktop-40;
-            &-22{
-                @extend %fs-large_desktop-xl;
+            
+        }
+        &.p-22{
+            p{
+                @extend %fs-large_desktop-lg;
             }
+            
+        }
+        &.p-24{
+            p{
+                @extend %fs-large_desktop-24;
+            }
+            
+        }
+        &.p-30{
+            p{
+                @extend %fs-large_desktop-30;
+            }
+            
         }
         &.p-white{
             p{

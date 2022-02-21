@@ -14,6 +14,7 @@
 //const { default: gsap } = require("gsap")
 
 $(document).ready(function(){
+    const Dir = document.documentElement.dir === 'rtl' 
     gsap.registerPlugin(Flip)
     document.querySelectorAll('.navigation__menu li a').forEach(function(ele){
         ele.addEventListener('click',function(e){
@@ -33,7 +34,7 @@ $(document).ready(function(){
         loop:true,
         items:1,
         margin:0,
-        rtl: document.documentElement.dir == 'rtl' ,
+        rtl: Dir ,
         autoplayHoverPause:true,
         nav:true,
         dots: true,
@@ -48,29 +49,39 @@ $(document).ready(function(){
     document.querySelectorAll('.what__grad-top__col').forEach(ele=>{
         ele.addEventListener('click' , function(){
             const children = Array.from(this.children);
-            const state = Flip.getState(children)
-            const toElement = document.querySelector('.to')
+            const toElement = document.querySelector(this.dataset.to)
             let newParent = null
             const img = document.querySelector(this.dataset.img)
-            const p = document.querySelector(this.dataset.p)
-
+            const text = document.querySelector(this.dataset.text)
+            const state = Flip.getState([...children , img ,text ,this])
+            
             if(children.includes(img)){
                 newParent = toElement
-                p.style.display = "block";
-                p.style.height= 50% +"px";
+                text.style.display = "block";
+                //text.style.height = 80+ "%" ;
                 this.classList.add(this.dataset.class)
+                children[0].style.alignSelf='flex-start'
+
             }else{
                 newParent = this 
-                p.style.display = "none"
-                p.style.height= 0 +"px";
+                //text.style.height = 0 + '%'
+                text.style.display = "none"
+                children[0].style.alignSelf='unset'
                 this.classList.remove(this.dataset.class)
+
             }
-            
             newParent.append(img)
-            Flip.from(state,{duration:1 , ease: 'power1.easeInOut'})
+            Flip.from(state,{duration:.8 , ease: 'power1.easeInOut' ,scale:true})
             
-
-
         })
     })
+    //$('what__cards__item:not(:first-of-type)')
+    //console.log( Array.from( $('.what__cards__item:first-child') ) );
+    $('.what__cards__item[data-slide = "true"]').each(function(index,ele){
+        $(ele).on('click' , function(){
+            $($(this).data('target')).slideToggle('slow');
+        })
+        console.log($(ele).data('target'));
+    });
+    //console.log(  $('.what__cards__item[data-slide = "true"]')  );
 })

@@ -33,12 +33,20 @@
         }
         
         &__col{
+            padding: 50px;
+            cursor: pointer;
+            //overflow: scroll;
+            @include transition(all .3s ease-in-out );
             .to{
                 align-items: center;
                 //justify-content: center;
+                @include transition(all .3s ease-in-out );
                 img{
                     width: 50px;
+                    height: 50px;
                 }
+                
+
             }
             &.img-yellow-12{
                 background-image: url(image('Asset 12.png'));
@@ -50,13 +58,79 @@
             background-repeat: no-repeat;
             background-size: cover;
             min-height: calc(100vh - 94px); 
+            max-height: 100vh;
             &:not(:first-of-type){
                 border-left: 2px solid  get(yellow);
             }
+            .section{
+                //align-self: flex-start;
+            }
             .section__text{
                 display: none;
-                height: 0;
+                //height: 0;
+                flex-grow: 1;
+                overflow: hidden;
+
             }
         }
     }
+    &__cards{
+        background-image:  -webkit-linear-gradient(bottom, get(white) , get(main));
+
+        &__item{
+            background-color: get(main);
+            padding: 55px 30px;
+            @include borderRadius(50px);
+            @include boxShadow(-5px 5px 0px 0px rgba(0,0,0,1));
+            //min-height: 350px;
+            cursor: pointer;
+            &:hover{
+                background-image: -webkit-linear-gradient(top , get(yellow-light) , get(yellow));
+                & .what__cards__item__text__title ,& .what__cards__item__text__subtitle , & .what__cards__item__text__body p {
+                    color:  get(main);
+                }
+            }
+            &__img{
+                margin-bottom: 20px;
+                
+                img{
+                    //width: 80px;
+                    height: 55px
+                }
+            }
+            &__text{
+                
+                &__subtitle{
+                    @extend %fs-large_desktop-35;
+                    color: get(white);
+                    font-weight: 300;
+
+                }
+                &__title{
+                    @extend %fs-large_desktop-40;
+                    color: get(white);
+                    font-weight: 600;
+                }
+                &__body{
+                    display: none;
+                    p{
+                        color: get(white);
+                        @extend %fs-large_desktop-xl;
+                    }
+                }
+            }
+        }
+    }
+
+}
+.show-modal-what-3{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    opacity: 0;
+    //pointer-events:painted;
 }
