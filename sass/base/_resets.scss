@@ -1,0 +1,22 @@
+@use "./../tools" as *;
+@use "./../config";
+@use "sass:map";
+*{
+    scroll-behavior: smooth;
+}
+body{
+    //background-color: get(gray);
+    font-weight: 400 ;
+
+    @include dir(ltr){
+       //font-family: append(map.get(config.$typo ,families,en) ,  var(--bs-font-sans-serif)  , $separator: 'comma' );
+        font-family: map.get(config.$typo ,families,en);
+    }
+    // @include dir(rtl){
+    // }
+    html[lang='ar'] &{
+        font-family: append(map.get(config.$typo ,families,ar) ,  var(--bs-font-sans-serif)  , $separator: 'comma' );
+
+    }
+    
+}

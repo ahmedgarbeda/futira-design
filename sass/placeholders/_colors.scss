@@ -1,0 +1,20 @@
+
+@use "./../mixin/index" as *;
+@use "./../functions/index" as *;
+
+// @each $name ,$value in $colors {
+//     %clr-#{$name}{
+//         color: #{$value};
+//     }
+//     %bg-clr-#{$name}{
+//         background-color: #{$value};
+//     }
+// }
+
+// %lnrg-1-2{
+//     @include dirs((
+//         background:-webkit-linear-gradient(left,get(first) 0%,get(second) 100%)
+//     )); 
+// }
+
+

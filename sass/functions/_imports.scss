@@ -1,0 +1,12 @@
+
+@use './../config' as *;
+
+
+@function image($imgName){
+    @return "#{$imagesPath + $imgName}"
+};
+
+@function font($fontName){
+    @return "#{$fontsPath + $fontName}"
+};
+

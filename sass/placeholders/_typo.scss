@@ -1,0 +1,58 @@
+@use  "./../config" as *;
+@use "sass:map";
+@use  "./../mixin/breakpoint" as *;
+
+@each $fontSize ,$value in map-get($typo, sizes) {
+    %fs-#{$fontSize}{
+        font-size: #{$value};
+    } 
+}
+
+@each $media  in map-keys($breakPoints ) {
+    @include breakpoint($media ,max){
+        @each $fontSize ,$value in map-get($typo, sizes) {
+            %fs-#{$media}-#{$fontSize}{
+                font-size: #{$value} !important;
+            } 
+        }
+    }
+}
+%fontawesome{
+    display: inline-block;
+    font-style: normal;
+    font-variant: normal;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+};
+%fab{
+    @extend %fontawesome;
+    font-family: "Font Awesome 5 Brands"; 
+    font-weight: 400;
+    
+}
+%fas{
+    @extend %fontawesome;
+    font-family: "Font Awesome 5 Pro"; 
+    font-weight: 900;
+    
+}
+%far{
+    @extend %fontawesome;
+    font-family: "Font Awesome 5 Pro"; 
+    font-weight: 400;
+    
+}
+
+%f-bold{
+    font-weight: 600;
+}
+%text-dec-none{
+    text-decoration: none;
+}
+%text-trans-cap{
+    text-transform: capitalize;
+}
+%text-trans-upper{
+    text-transform: uppercase;
+}
+

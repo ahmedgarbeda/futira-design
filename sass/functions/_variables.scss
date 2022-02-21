@@ -1,0 +1,10 @@
+@use  "./../config" as *;
+@function get($name){
+    @if map-has-key($cssVars ,$name ) {
+        @return var(--#{$name});
+    };
+    @if map-has-key($sassVars,$name){
+        @return map-get($sassVars, $name);
+    };
+    @return #{$name}
+}

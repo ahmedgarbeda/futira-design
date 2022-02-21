@@ -1,0 +1,20 @@
+@use  "./../tools" as *;
+.bgc{
+    &-1{
+        background-color: get(first) !important;
+    }
+    &-2{
+        background-color: get(second) !important;
+    }
+}
+.clr{
+    &-1{
+        color: get(first) !important;
+    }
+    &-2{
+        color: get(second) !important;
+    }
+    &-white{
+        color: get(white);
+    }
+}

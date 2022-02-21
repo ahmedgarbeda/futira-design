@@ -1,0 +1,73 @@
+//*************************************************************//
+//                           font families                     // 
+// ************************************************************//
+
+
+$fontFamilies:(
+    dubai:(
+        (
+            src:'Dubai-Regular.ttf' ,
+            style:normal,
+            weight:400,
+        )
+        (
+            src:'Dubai-Medium.ttf' ,
+            style:normal,
+            weight:500
+        )
+        (
+            src:'Dubai-Light.ttf' ,
+            style:normal,
+            weight:300,
+        )
+        (
+            src:'Dubai-Bold.ttf' ,
+            style:normal,
+            weight:600,
+        )
+    ),
+    almarai:(
+        (
+            src:'Almarai-Regular.ttf' ,
+            style:normal,
+            weight:400,
+        ),
+        (
+            src:'Almarai-Light.ttf' ,
+            style:normal,
+            weight:300,
+        ),
+        (
+            src:'Almarai-Bold.ttf' ,
+            style:normal,
+            weight:600,
+        ),
+        (
+            src:'Almarai-ExtraBold.ttf' ,
+            style:normal,
+            weight:700,
+        )
+    ),
+    Nexa:(
+        (
+            src:'NexaRegular.otf' ,
+            style:normal,
+            weight:400,
+        ),
+        (
+            src:'NexaLight.otf' ,
+            style:normal,
+            weight:300,
+        ),
+        (
+            src:'NexaBlack.otf' ,
+            style:normal,
+            weight:500,
+        ),
+        (
+            src:'NexaXBold.otf' ,
+            style:normal,
+            weight:600,
+        ),
+    )
+);

@@ -1,0 +1,97 @@
+@use  "./../tools" as *;
+.section{
+    font-weight: 300;
+    &__title{
+        @extend %fs-large_desktop-60;
+        @extend %fs-desktop-35;
+        width: fit-content;
+        display: inline-block;
+        color: get(main);
+        position: relative;
+        @extend %text-trans-cap;
+        margin-bottom: 20px;
+        &.color-white{
+            color: get(white);
+        }
+        &.start{
+            align-self: flex-start
+        }
+    }
+    &__subtitle{
+        @extend %fs-large_desktop-35;
+        @extend %fs-desktop-30;
+        @extend %text-trans-cap;
+        &.color-white{
+            color: get(white);
+        }
+    }
+    &__text{
+        @include dirs((text-align:left));
+        display: flex;
+        align-content: center;
+        flex-direction: column;
+        //padding-top: 50px;
+        &.padding-start{
+            padding-inline-start:120px;
+            @include breakpoint(tablet,max){
+                padding-inline-start:0
+            }
+        }
+        &.padding-end{
+            padding-inline-end:120px;
+            @include breakpoint(tablet,max){
+                padding-inline-end:0;
+            }
+        }
+        &__title{
+            @extend %fs-large_desktop-30;
+            @extend %fs-desktop-30;
+            @extend %text-trans-cap;
+            color: get(main);
+            &-main{
+                color: get(main);
+            }
+            &-white{
+                color: get(white);
+            }
+        }
+        &__subtitle{
+            @extend %fs-md;
+            @extend %text-trans-cap;
+            margin-bottom: 25px;
+            @include breakpoint(tablet,max){
+                margin-bottom: 10px;
+            }
+            &-white{
+                color: get(white);
+            }
+        }
+        
+        p{
+            line-height: 1.9;
+            color: get(main);
+            @extend %fs-large_desktop-40;
+            &-22{
+                @extend %fs-large_desktop-xl;
+            }
+        }
+        &.p-white{
+            p{
+                color: get(white);
+            }
+        }
+        &.p-18{
+            p{
+                @extend %fs-large_desktop-md;
+            }
+        }
+        &.color-main{
+            p{
+                color: get(main);
+            }
+        }
+    }
+}
+.reverse{
+    flex-direction: row-reverse;
+}

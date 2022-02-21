@@ -1,0 +1,9 @@
+@use  "./../config" as *;
+:root{
+    @each $name , $value in $cssVars {
+        --#{$name} : #{$value};
+    };
+}
+
+//-webkit-linear-gradient(left,var(--first) 0%,var(--second) 100%)
+//linear-gradient(-107deg,var(--third) 0%,var(--forth) 100%)

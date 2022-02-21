@@ -1,0 +1,8 @@
+@mixin keyFrame ($name){
+    @keyframes #{$name} {
+        @content;
+    }
+    @-webkit-keyframes #{$name} {
+        @content;
+    }
+}

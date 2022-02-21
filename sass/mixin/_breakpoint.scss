@@ -1,0 +1,38 @@
+@use './../config' as *;
+@use  './../functions/index' as *;
+$statements :(
+    min:"(min-width : value)",
+    max:"(max-width : value)",
+    and:"(min-width : minValue) and (max-width : maxValue)"
+);
+@mixin breakpoint ($breakpoint,$type:and) {  
+    $statement : '';
+    $targetValueFromMedia : max;
+    @if type-of($value: $breakpoint) == number { 
+        @if  $type  == and{
+            $type : max
+        }
+        $statement:map-get($statements,$type);
+        $statement:str-replace($statement,"value", $breakpoint);   
+    }@else if type-of($value: $breakpoint) == list {
+        $type : and ;
+        $statement:map-get($statements,$type);
+        $statement : str-replace($statement,"maxValue",nth($breakpoint,2));
+        $statement : str-replace($statement,"minValue",nth($breakpoint,1));
+    }@else if type-of($value: $breakpoint) == string {
+        @if $breakpoint == large_desktop {
+            $targetValueFromMedia : min;
+            $type : min ; 
+        }
+        $statement:map-get($statements,$type);
+        @if $type != and  {
+            $statement : str-replace($statement,"value",map-get($breakPoints, $breakpoint, $targetValueFromMedia ));
+        }@else{
+            $statement : str-replace($statement,"minValue",map-get($breakPoints,$breakpoint,min ));
+            $statement : str-replace($statement,"maxValue",map-get($breakPoints,$breakpoint,max ));
+        }
+    }
+    @media #{$statement} {
+        @content;
+    };
+};

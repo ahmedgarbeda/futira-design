@@ -1,0 +1,62 @@
+@use  "./../tools" as *;
+.what{
+    &__modal{
+        //max-width: 950px;
+        &__content{
+            background-color: transparent;
+            border: none;
+            background: get(gradientLTR);
+            @include borderRadius(50px);
+        }  
+        .modal-header{
+            background-color: transparent;
+            border:none;
+        }
+        &__close{
+            @extend %center-f;
+            border: 1px solid get(main);
+            @include borderRadius(100%);
+            outline: none;
+            background-color: transparent;
+            color: get(main);
+            font-size: 35px;
+            width: 60px;
+            height: 60px;
+        }
+    }
+    &__grad-top{
+        background-image: -webkit-linear-gradient(top, get(white) , get(main));
+        padding: 20px 0;
+        .row.border-left-right{
+            border-left: 2px solid  get(yellow);
+            border-right: 2px solid  get(yellow);
+        }
+        
+        &__col{
+            .to{
+                align-items: center;
+                //justify-content: center;
+                img{
+                    width: 50px;
+                }
+            }
+            &.img-yellow-12{
+                background-image: url(image('Asset 12.png'));
+            }
+            &.img-yellow-13{
+                background-image: url(image('Asset 13.png'));
+            }
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            min-height: calc(100vh - 94px); 
+            &:not(:first-of-type){
+                border-left: 2px solid  get(yellow);
+            }
+            .section__text{
+                display: none;
+                height: 0;
+            }
+        }
+    }
+}

@@ -1,0 +1,139 @@
+@use  "./../tools" as *;
+.carousel{
+    .item{
+        min-height: calc( 100vh - 94px);
+        &.color-main{
+            background-color: get(main);
+            @extend %center-f;
+        }
+        &.color-gradient{
+            @extend %center-f;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            &.one{
+                background-image: url(image('Asset 2.png'));
+            }
+            &.two{
+                background-image: url(image('Asset 5.png'));
+            }
+        }
+
+
+    }
+    .owl-item img{
+        width: auto ;
+    }
+    .owl{
+        &-nav{
+            --value : 5%;
+            .owl-prev{
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                @include dirs((
+                    left: var(--value)
+                ));
+                
+            }
+            .owl-next{
+                position: absolute;
+                top: 50%;
+                @include transform(translateY(-50%));
+                @include dirs((
+                    right: var(--value)
+                ));
+            }
+            i{
+                color: get(white);
+                font-size: 250px;
+            }
+            @include breakpoint(tablet,max){
+                display: none;
+            }
+        }
+        &-dots{
+            position: absolute;
+            bottom: 10px;
+            left: 50%;
+            @include transform(translateX(-50%));
+            button{
+                @include transition(all .3s ease-in-out);
+                border: 1px solid get(white);
+                width: 10px;
+                height: 10px;
+                border-radius: 10px;
+                &:not(:first-of-type){
+                    margin-inline-start: 8px;
+                }
+                &.active{
+                    width: 20px;
+                    background-color: get(white);
+                }
+            }
+        }
+    }
+    &__slide{
+        padding: 0 50px;
+        @extend %center-f;
+        align-items: stretch;
+        flex-direction: column;
+        &-1{
+            img{
+                @extend %center-p;
+                width: auto !important;
+                @include breakpoint(tablet,max){
+                    width: 300px !important;
+                }
+            }
+            
+        }
+        &__label{
+            @extend %text-trans-upper;
+            @extend %fs-40;
+            color: get(white);
+        }
+        &__seprator{
+            flex-grow: 1;
+            background: get(main);
+            height: 3px;
+            margin: 20px;
+        }
+        &__date{
+            @extend %center-f;
+            
+            color: get(white);
+            &__seprator{
+                flex-grow: 1;
+                background: get(gradientLTR);
+                height: 3px;
+                margin: 50px 20px;
+                @include breakpoint(tablet,max){
+                    margin: 20px
+                }
+            }
+            &__label{
+                @extend %fs-24;
+                //text-transform: uppercase;
+                @extend %text-trans-upper;
+            }
+            &__count{
+                font-size: 100px;
+                @include breakpoint(tablet,max){
+                    font-size: 75px
+                }
+            }
+        }
+    }
+}
+.carousel-control-next-icon,.carousel-control-prev-icon{
+    width: 8rem;
+    height: 8rem;
+}
+.center{
+    @extend %center-f;
+    &-column{
+        @extend %center-f;
+        flex-direction: column;
+    }
+}

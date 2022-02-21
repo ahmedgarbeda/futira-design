@@ -1,0 +1,128 @@
+// web site global setting 
+
+$defaultDir : ltr;
+
+//*************************************************************//
+//                           PATHS                             // 
+// ************************************************************//
+
+$imagesPath : "../images/" ; // related to main style.css 
+
+$fontsPath : "../fonts/" ; // related to main style.css 
+
+//*************************************************************//
+//                           TYPOGRAPHY                        // 
+// ************************************************************//
+
+$typo:(
+    sizes:(
+        xs:  .75rem,        //12px
+        sm:  .875rem,       //14px   
+        nor: 1rem,          //16px
+        md:  1.125rem,      //18px 
+        lg:  1.25rem,       //20px
+        xl:  1.375rem,      //22px
+        24:  1.5rem,      //24px
+        30:  1.875rem,      //30px
+        35:  2.1875rem,      //35px
+        xxl:  3.121rem ,    //50px
+        40:  2.5rem ,       //40px
+        60: 3.75rem,      //60px   
+    ),           
+    families:(
+        en:  'Nexa' ,
+        ar: ('dubai', sans-serif)
+    )
+);
+
+//*************************************************************//
+//                           SPACER                            // 
+// ************************************************************//
+
+$paddingY :3.125rem; // 50px
+$paddingX :0;
+
+$marginY :3.125rem; // 50px 
+$marginX :0;
+
+
+//*************************************************************//
+//                           BORDER RADIUS                     // 
+// ************************************************************//
+
+$borderRadius :.125rem; // 7px
+
+//*************************************************************//
+//                           VARIABLES                         // 
+// ************************************************************//
+// -webkit-linear-gradient(right, var(--second), var(--second-light))
+
+$darkenFactory : 10%;
+$lightenFactory : 10%;
+$main :  #6932D4 ; //6932D4
+$yellow :#DB8934; //DB8934  -- E7BD4C
+// $third : #82009f;
+// $forth : #f7345e;
+$cssVars:(
+    main  : $main,
+    yellow : $yellow,
+    gradientLTR:  -webkit-linear-gradient( bottom right,  var(--yellow-light) , var(--yellow)), 
+    gradientRTL:  -webkit-linear-gradient(bottom left, var(--yellow-light) var(--yellow)), 
+    // third  : $third,
+    // forth  : $forth,
+    main-dark  : darken($main,$darkenFactory),
+    yellow-dark :  darken($yellow,$darkenFactory),
+    // third-dark  : darken($third,$darkenFactory),
+    // forth-dark  : darken($forth,$darkenFactory),
+    main-light  : lighten($main,$lightenFactory),
+    yellow-light : #E7BD4C,
+    // third-light  : lighten($third,$lightenFactory),
+    // forth-light  : lighten($forth,$lightenFactory),
+
+);
+$sassVars :(
+    white:var(--bs-white),
+    black:var(--bs-dark),
+    paddingY :$paddingY, // 50px
+    paddingX :$paddingX, // 0
+    marginY :$marginY, // 50px 
+    marginX :$marginX, //0
+    borderRadius :$borderRadius,
+    card-radius : 1.5625rem, // 25px
+    hero-card-radius : 1.25rem, // 20px
+    imagesPath : $imagesPath,
+    fontsPath :$fontsPath,
+    gray:var(--bs-gray-100),
+    gray-200:var(--bs-gray-200),
+    gray-300:var(--bs-gray-300),
+    gray-400:var(--bs-gray-400),
+    gray-500:var(--bs-gray-500),
+    gray-600:var(--bs-gray-600),
+    gray-700:var(--bs-gray-700),
+    gray-800:var(--bs-gray-800),
+    gray-900:var(--bs-gray-900),
+    
+);
+
+
+//*************************************************************//
+//                           MEDIA QUERY                       // 
+// ************************************************************//
+
+$breakPoints:(
+    large_desktop:(
+        min:991.99px,
+    ),
+    desktop:(
+        min:767.99px,
+        max:991.98px
+    ),
+    tablet:(
+        min:575.99px,
+        max:767.98px,
+    ),
+    mobile:(
+        min:0px,
+        max:575.98px,
+    ),
+);

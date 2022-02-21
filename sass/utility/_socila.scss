@@ -1,0 +1,12 @@
+$social :(
+    linkedin : #0077b5,
+    facebook: #4267B2,
+    youtube: #FF0000,
+    whatsapp: #25D366,
+);
+
+@each $key , $value in $social {
+    .#{$key}{
+        background-color: #{$value};
+    }
+}

@@ -1,0 +1,55 @@
+@use '../functions/index' as *;
+$prefixes:(-webkit-,-o-, -ms-, -moz- );
+@mixin addPrefix($property,$value ,$target : name ,$important:false) {
+    $importantStatus :"";
+    @if $important{
+        $importantStatus : "!important" ;
+    }
+    @if $target == value {
+        @each $prefix in $prefixes {
+            #{$property} : #{$prefix + $value +  $importantStatus};
+        }
+        #{$property} : #{$value +  $importantStatus};
+    }@else{
+        @each $prefix in $prefixes {
+            #{$prefix + $property} : #{$value +  $importantStatus};
+        }
+        #{$property} : #{$value +  $importantStatus};
+    }
+}
+
+@mixin borderRadius($value:get(borderRadius) , $important:false) {
+    @include addPrefix(border-radius,$value,name , $important);
+}
+@mixin transition($value , $important:false) {
+    @include addPrefix(transition,$value,name , $important);
+}
+@mixin transform($value ,$important:false) {
+    @include addPrefix(transform,$value,name , $important);
+}
+@mixin boxShadow ($value ,$important:false){
+    @include addPrefix(box-shadow,#{$value} ,name , $important);
+}
+
+@function prefixList ($property,$value , $target :name, $important:false){
+    $values: ();
+    $importantStatus :"";
+    @if $important{
+        $importantStatus : "!important" ;
+    }
+    @if $target == value {
+        @each $prefix in $prefixes {
+            $values:map-merge($values,( $property: $prefix +$value + $importantStatus));
+            @debug $values;
+        }
+    }@else{
+        @each $prefix in $prefixes {
+            $values:map-merge($values,($prefix + $property: $value + $importantStatus));
+        }
+    }
+    @return $values
+};
+
+
+
+

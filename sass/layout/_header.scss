@@ -1,0 +1,126 @@
+@use  './../tools'as *;
+@use "sass:math";
+header{
+    background-color: get(main);
+    position: -webkit-sticky;
+    position: sticky;
+    z-index: 99999;
+    top: 0;
+    @include boxShadow(0 0 5px 5px rgba(black , .125));
+    //background-color:  get(main);
+    .navigation {
+        @extend %center-f;
+        padding: calc(get(paddingY) / 2) 0;
+        position: relative;
+        @include breakpoint(desktop,max){
+            justify-content: space-between;
+        }
+        &__logo{
+            @include breakpoint(desktop,max){
+                width: 150px;
+            }
+        }
+        &__toggle{
+            overflow: hidden;
+            button{
+                height: 45px;
+                width: 50px;
+                padding: 5px;
+                border: none;
+                outline: none;
+                position: relative;
+                @extend %center-f;
+                flex-direction: column;
+                &::after ,  &::before , i{
+                    @include transition(all .3s ease);
+                }
+                &::after ,  &::before{
+                    content: '';
+                    background-color: get(yellow);
+                    width:20px;
+                    height: 3px;
+                }
+                &::after{
+                    margin-top: 5px
+                }
+                i {
+                    @include transform(scale(0) translate(-50% , -50%)) ;
+                    visibility: hidden;
+                    font-size: 0;
+                    opacity: 0;
+                    color: get(white);
+                    height: 0%;
+                    @extend %center-p;
+                    width: 50%;
+                    
+                }
+                &.active{
+                    &::after{
+                        @include transform(translateX(50px)) ;
+                        visibility: hidden;
+                    }
+                    &::before{
+                        @include transform(translateX(-50px)) ;
+                        visibility: hidden;
+                    }
+                    i {
+                        visibility: visible;
+                        font-size: 25px;
+                        @include transform(scale(1) translate(-50% , -50%)) ;
+                        opacity: 1;
+                        color: get(yellow);
+                        height: 50%;
+                    }
+                }
+                
+            }
+            @include breakpoint(desktop,min){
+                display: none;
+            }
+        }
+        &__wallet{
+            
+        }
+        &__menu{
+            @extend %center-f;
+            list-style: none;
+            padding: 0;
+            flex-grow: 1;
+            height: 100%;
+            margin: 0;
+            @include breakpoint(desktop,max){
+                display: none;
+            };
+            & > li{
+                &:not(:last-of-type){
+                    margin-inline-end: 20px
+                }
+                margin: 0;
+                a{
+                    color: get(white);
+                    text-decoration: none;
+                    font-weight: 600;
+                    text-transform: capitalize;
+                    @extend %fs-md
+                };
+            }
+            &__mobile{
+                @extend %center-f;
+                flex-direction: column;
+                position: absolute;
+                top: 0;
+                left: -100%;
+                list-style: none;
+                padding: 0;
+                width: 50vw;
+                max-width: 500px;
+                min-width: 250px;
+                @include  boxShadow(0 0 5px 5px rgba(black , .125));
+                background-color: get(gray);
+                @include breakpoint(desktop,min){
+                    display: none;
+                }
+            }
+        }
+    }
+}

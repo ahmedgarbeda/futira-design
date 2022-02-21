@@ -1,0 +1,46 @@
+@use  "./../tools" as *;
+
+%base-btn{
+    @extend%text-trans-cap;
+    @extend%text-dec-none;
+    cursor: pointer;
+    transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22);
+    @include borderRadius();
+    border: none;
+    outline: none;
+    padding: 10px 20px;
+    font-weight: 300;
+    
+
+}
+.btn-main{
+    @include dir{
+        background: get(gradientLTR);
+    }
+    @include dir(rtl){
+        background: get(gradientRTL);
+    }
+    color: get(white);
+    @extend %base-btn;
+    &.large{
+        color: get(main);
+        font-size: 30px;
+        padding:10px 50px;
+        @include borderRadius(50px);
+        align-self: start;
+        @extend %center-g;
+    }
+    &:hover{
+        //background-color: get(second);
+    }
+}
+.btn-second{
+    background-color: get(gray);
+    @include boxShadow(0 0 5px 5px rgba(black, .125));
+    color: get(main);
+    @extend %base-btn;
+    &:hover{
+        //background-color: get(second);
+    }
+}
+

@@ -1,0 +1,26 @@
+@use './../config' as * ;
+@use './../fontFamilies' as *;
+@use './../functions/index' as * ;
+
+@mixin font($size) {
+    @if map-has-key($typo,sizes,$size) {
+        font-size: map-get($typo,sizes,$size);
+    }
+    @else{
+        @error 'there is no key like '+$size;
+    };
+};
+
+
+@mixin importFonts($fontsToImport:$fontFamilies){
+    @each $fontName , $fontTypes in $fontFamilies {
+        @each $type in $fontTypes {
+            @font-face {
+                font-family: "#{$fontName}";
+                src: url(font(map-get($type,src)));
+                font-weight: map-get($type,weight);
+                font-style: map-get($type,style);
+            }
+        }
+    }
+}
