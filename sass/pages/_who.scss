@@ -1,86 +1,59 @@
-@use  "./../tools" as *;
-.who{
-    min-height: 50vh;
-    text-align: center;
+@use "./../tools" as *;
+.who {
+  min-height: 50vh;
+  a {
+    text-decoration: none;
+  }
+  .card {
     margin-top: 25px;
-    &__first{
-        background-color: get(main);
-        padding: get(paddingY);
-        @include breakpoint(tablet,max){
-            padding: 20px;
-        }
+    border: 0;
+    color: get(white);
+    transition: all 0.3s ease-in-out;
+    img {
+      filter: grayscale(1);
     }
-    &__second{
-        @include dirs((background:-webkit-linear-gradient(right,get(second-light),get(second))));
-        padding: get(paddingY);
-        @include breakpoint(tablet,max){
-            padding: 20px;
-        }
+    .title {
+      font-size: 0.65rem;
+      background-color: get(main);
+      h4 {
+        font-size: 1rem !important;
+      }
     }
-    .member_meta{
-        @extend %center-f;
-        &_text{
-            flex-grow: 1;
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: flex-start;
-            margin-inline-start: 15px;
-            &_name{
-                @extend %fs-nor;
-                @extend %text-trans-cap;
-                @extend %f-bold;
-
-            }
-            &_job{
-                @extend %fs-sm;
-                color: get(main);
-            }
-
-        }
-        img{
-            width: 80px;
-            height: 80px;
-            @include borderRadius(80px);
-        }
+    &:hover {
+      img {
+        filter: grayscale(0);
+      }
+      .title {
+        background: var(--gradientLTR);
+      }
     }
-    .member_note{
-        > p{
-            @extend %fs-sm;
-            //line-height: 2.5;
-            padding: 10px 15px;
-            @include dirs((
-                text-align:left
-            ));
-        }
+  }
+  .who-modal{
+    background: rgb(105 50 212 / 75%);
+    z-index: 9999999;
+  }
+  .who__modal__content {
+    position: relative;
+    border-radius: 3rem;
+    border: none;
+    .modal-header {
+      position: absolute;
+      right: 0;
+      z-index: 50;
     }
-    .owl-nav{
-        .owl-prev ,.owl-next{
-            position: absolute;
-            top: 50%;
-            @include transform(translateY(-50%));
-            font-size: 25px !important;
-            width: 60px;
-            height: 60px;
-            @include borderRadius(60px);
-            @include boxShadow(1px 1px 10px 2px rgba(black,.25));
-            color: get(second) !important;
-            background-color: #fff !important;
-            @extend %center-f;
-            @include breakpoint(tablet,max){
-                display: none;
-            }
-        }
-        .owl-prev{
-            @include dirs((
-                left:-35px
-            ));
-        }
-        .owl-next{
-            @include dirs((
-                right:-35px
-            ));
-        }
+    .modal-body {
+      padding: 0;
+      overflow: hidden;
     }
-
+    h3 {
+      color: get(main);
+    }
+    .position {
+      color: get(main);
+      font-weight: 400;
+    }
+    p {
+      color: var(--gradientLTR);
+    }
+  }
 }

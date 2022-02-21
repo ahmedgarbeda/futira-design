@@ -43,4 +43,27 @@
         //background-color: get(second);
     }
 }
+.btn-social{
+    background: get(main);
+    border: 1px solid get(main);
+
+    color: get(white);
+    display: flex;
+    align-items: center;
+    @extend %base-btn;
+    i{
+        font-size: 1.3rem;
+    }
+    &.large{
+        font-size: 0.75rem;
+        padding: 1rem 2rem;
+        @include borderRadius(50px);
+        align-self: start;
+    }
+    &:hover{
+        background: get(white);
+        color: get(main);
+    }
+    
+}
 
