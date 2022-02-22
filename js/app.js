@@ -75,13 +75,11 @@ $(document).ready(function(){
             
         })
     })
-    //$('what__cards__item:not(:first-of-type)')
-    //console.log( Array.from( $('.what__cards__item:first-child') ) );
     $('.what__cards__item[data-slide = "true"]').each(function(index,ele){
         $(ele).on('click' , function(){
             $($(this).data('target')).slideToggle('slow');
         })
         console.log($(ele).data('target'));
     });
-    //console.log(  $('.what__cards__item[data-slide = "true"]')  );
+
 })

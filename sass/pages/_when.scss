@@ -1,4 +1,58 @@
 @use "./../tools" as *;
 .when{
-    
+    padding: 50px 20px;
+    @extend %center-f;
+    .accordion{
+        .accordion-item{ 
+            border:none;
+            border-radius: 0;
+            border-bottom: 2px solid get(white);
+            //
+            &:first-child{
+                border-top: 2px solid get(white);
+            }
+
+            background-color: transparent;
+            .accordion-header{
+                button{
+                    background-color: transparent;
+                    height: 80px;
+                    color: white;
+                    &:not(.collapsed){
+                        color: white;
+                        background-image: get(gradientLTR);
+                    }
+                    &:focus{
+                        box-shadow: none;
+
+                    }
+                    @extend %fs-large_desktop-40;
+                }
+                
+            }
+            .accordion-body{
+                background-color: get(white);
+                color: get(main);
+                &__item{
+                    &:not(:last-of-type){
+                        border-bottom: 1px solid get(main);
+                    }
+                    padding: 20px;
+                    &__slide{
+                        width: 50%;
+                        @extend %fs-large_desktop-sm;
+                        @extend %center-f;
+                        margin-top: 5px;
+                        &__seprator{   
+                            height:3px;
+                            background-image: get(gradientLTR);
+                            flex-grow: 1;
+                            margin: 0 20px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
 }

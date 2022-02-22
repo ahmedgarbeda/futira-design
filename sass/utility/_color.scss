@@ -3,6 +3,9 @@
 .background{
     &-main{
         background-color: get(main);
+        &-dark{
+            background-color: get(main-dark);
+        }
     }
 }
 

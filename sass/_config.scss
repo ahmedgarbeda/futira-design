@@ -70,7 +70,6 @@ $cssVars:(
     yellow-dark :  darken($yellow,$darkenFactory),
     main-light  : lighten($main,$lightenFactory),
     yellow-light : #E7BD4C,
-
 );
 $sassVars :(
     white:var(--bs-white),

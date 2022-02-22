@@ -1,5 +1,13 @@
 @use "./../tools" as *;
 
 .where{
-    
+    background-image: url(image('Asset 38.png'));
+    background-repeat: no-repeat;
+    background-position: center;
+    //@extend %center-f
+    padding: 20px;
+    &__text{
+        padding: 50px;
+        @extend %center-f-column
+    }
 }

@@ -27,11 +27,14 @@
         font-size: 30px;
         padding:10px 50px;
         @include borderRadius(50px);
-        align-self: start;
+        
         @extend %center-g;
     }
     &:hover{
         //background-color: get(second);
+    }
+    &.start{
+        align-self: start;
     }
 }
 .btn-second{

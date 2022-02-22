@@ -1,1 +1,16 @@
 @use  "./../tools" as *;
+
+.side-word{
+    position: absolute;
+    top: 50%;
+    left: 30px;
+    @include transform(translateY(-50%));
+    width: 150px;
+    height: 100%;
+    @extend %center-f;
+    img{
+        max-width: 100%;
+        height: auto;
+
+    }
+}
