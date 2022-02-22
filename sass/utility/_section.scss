@@ -91,6 +91,12 @@
             }
             
         }
+        &.p-16{
+            p{
+                @extend %fs-large_desktop-nor;
+            }
+            
+        }
         &.p-white{
             p{
                 color: get(white);
@@ -108,6 +114,6 @@
         }
     }
 }
-.reverse{
-    flex-direction: row-reverse;
+.pt-6{
+    padding-top: 4rem !important;
 }

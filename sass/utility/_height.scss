@@ -1,9 +1,7 @@
+
 @for $i from 1 through 5 {
     $daseHeight : 20;
     .min-height-#{$i * $daseHeight }{
        min-height: calc(#{$i * $daseHeight + 'vh'} - 94px);
     }
-}
-.who .card .title{
-    min-height: 80px;
 }

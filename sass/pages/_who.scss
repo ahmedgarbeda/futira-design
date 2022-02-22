@@ -16,6 +16,8 @@
         .title {
             font-size: 0.65rem;
             background-color: get(main);
+            min-height: 85px;
+            @extend %center-f-column-start;
             h4 {
                 font-size: 1rem !important;
             }
@@ -37,11 +39,7 @@
         position: relative;
         border-radius: 3rem;
         border: none;
-        .modal-header {
-            position: absolute;
-            right: 0;
-            z-index: 50;
-        }
+        
         .modal-body {
             padding: 0;
             overflow: hidden;
@@ -57,4 +55,11 @@
             color: get(gradientLTR);;
         }
     }
+}
+.modal-header {
+    position: absolute;
+    @include dirs((
+        right: 0
+    ));
+    z-index: 50;
 }

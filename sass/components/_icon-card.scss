@@ -7,13 +7,17 @@
     @extend %center-f-column-start;
     &__img{
         margin-bottom: 25px;
+        img{
+            //height: 60px;
+            max-width: 80% !important
+        }
     }
     &__text{
         //max-width: 350px;
         //padding:20px 0; 
-        flex-grow: 1;
+        //flex-grow: 1;
         p{
-            @extend %fs-large_desktop-md;
+            @extend %fs-large_desktop-nor;
             color: get(white);
         }
     }

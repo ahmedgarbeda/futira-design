@@ -7,6 +7,7 @@
   --yellow-dark: #bb6f21;
   --main-light: #885cdd;
   --yellow-light: #E7BD4C;
+  --overlay-main: rgba(105, 50, 212, 0.75);
 }
 
 @font-face {
@@ -98,7 +99,11 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 0.875rem !important;
   }
 
-  .icon-card__text p, .section__text.p-18 p {
+  .icon-card__text p, .section__text.p-16 p {
+    font-size: 1rem !important;
+  }
+
+  .section__text.p-18 p {
     font-size: 1.125rem !important;
   }
 
@@ -175,7 +180,7 @@ header .navigation__menu > li a, .section__text__subtitle {
   flex-direction: column;
 }
 
-.icon-card {
+.who .card .title, .icon-card {
   display: flex;
   justify-content: center;
   align-items: flex-start;
@@ -390,8 +395,8 @@ html[dir=ltr] .section__text {
   color: var(--main);
 }
 
-.reverse {
-  flex-direction: row-reverse;
+.pt-6 {
+  padding-top: 4rem !important;
 }
 
 .min-height-20 {
@@ -414,10 +419,6 @@ html[dir=ltr] .section__text {
   min-height: calc(100vh - 94px);
 }
 
-.who .card .title {
-  min-height: 80px;
-}
-
 .side-word {
   position: absolute;
   top: 50%;
@@ -433,6 +434,11 @@ html[dir=ltr] .section__text {
 .side-word img {
   width: 75%;
   height: auto;
+}
+
+.overlay-main {
+  background-color: var(--overlay-main);
+  z-index: 1000000000000000100;
 }
 
 header {
@@ -585,8 +591,8 @@ header .navigation__menu__mobile {
 .icon-card__img {
   margin-bottom: 25px;
 }
-.icon-card__text {
-  flex-grow: 1;
+.icon-card__img img {
+  max-width: 80% !important;
 }
 .icon-card__text p {
   color: var(--bs-white);
@@ -887,6 +893,7 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
 .who .card .title {
   font-size: 0.65rem;
   background-color: var(--main);
+  min-height: 85px;
 }
 .who .card .title h4 {
   font-size: 1rem !important;
@@ -906,11 +913,6 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
   border-radius: 3rem;
   border: none;
 }
-.who .who__modal__content .modal-header {
-  position: absolute;
-  right: 0;
-  z-index: 50;
-}
 .who .who__modal__content .modal-body {
   padding: 0;
   overflow: hidden;
@@ -924,6 +926,17 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
 }
 .who .who__modal__content p {
   color: var(--gradientLTR);
+}
+
+.modal-header {
+  position: absolute;
+  z-index: 50;
+}
+html[dir=rtl] .modal-header {
+  left: 0;
+}
+html[dir=ltr] .modal-header {
+  right: 0;
 }
 
 .why {
@@ -1045,6 +1058,7 @@ html[dir=ltr] .where__num {
 }
 .where__card .color-main p {
   font-weight: 600;
+  line-height: 1.5;
 }
 
 /*# sourceMappingURL=style.css.map */
