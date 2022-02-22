@@ -6,12 +6,13 @@
     background-position: center;
     padding: 20px;
     &__text{
-        padding: 50px 80px;
         @extend %center-f-column;
         color: get(white);
-        @extend %fs-large_desktop-30;
+        @extend %fs-large_desktop-24;
         font-weight: 300;
         text-align: center;
+        margin: 80px auto;
+        width: 70%;
     }
     &__num{
         color: get(white);
@@ -22,8 +23,8 @@
         ));
         &__text{
             color: get(white);
-            @extend %fs-large_desktop-30;
             font-weight: 300;
+            @extend %fs-large_desktop-30;
         }
     }
     &-modal{

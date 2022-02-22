@@ -115,11 +115,11 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 1.375rem !important;
   }
 
-  .section__text.p-24 p {
+  .where__text, .section__text.p-24 p {
     font-size: 1.5rem !important;
   }
 
-  .where__text, .where__num__text, .section__subtitle, .section__text__title, .section__text p, .section__text.p-30 p {
+  .where__num__text, .section__subtitle, .section__text__title, .section__text p, .section__text.p-30 p {
     font-size: 1.875rem !important;
   }
 
@@ -1026,10 +1026,11 @@ html[dir=ltr] .modal-header {
   padding: 20px;
 }
 .where__text {
-  padding: 50px 80px;
   color: var(--bs-white);
   font-weight: 300;
   text-align: center;
+  margin: 80px auto;
+  width: 70%;
 }
 .where__num {
   color: var(--bs-white);
