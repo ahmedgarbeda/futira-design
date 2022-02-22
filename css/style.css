@@ -115,7 +115,7 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 1.375rem !important;
   }
 
-  .section__text.p-24 p {
+  .media .card .title i, .section__text.p-24 p {
     font-size: 1.5rem !important;
   }
 
@@ -1059,6 +1059,14 @@ html[dir=ltr] .where__num {
 .where__card .color-main p {
   font-weight: 600;
   line-height: 1.5;
+}
+
+.media .card .title {
+  flex-direction: row !important;
+}
+.media .card .title h4 {
+  font-size: 1rem !important;
+  font-weight: 400;
 }
 
 /*# sourceMappingURL=style.css.map */
