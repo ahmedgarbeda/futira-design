@@ -106,7 +106,7 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 1.25rem !important;
   }
 
-  .what__cards__item__text__body p {
+  .what__cards__item__text__body p, .btn-main.large {
     font-size: 1.375rem !important;
   }
 
@@ -114,29 +114,29 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 1.5rem !important;
   }
 
-  .where__text, .where__num__text, .section__text__title, .section__text.p-30 p {
+  .where__text, .where__num__text, .section__subtitle, .section__text__title, .section__text p, .section__text.p-30 p {
     font-size: 1.875rem !important;
   }
 
-  .what__cards__item__text__subtitle, .section__subtitle {
+  .what__cards__item__text__subtitle {
     font-size: 2.1875rem !important;
   }
 
-  .when .accordion .accordion-item .accordion-header button, .what__cards__item__text__title, .section__text p {
+  .when .accordion .accordion-item .accordion-header button, .what__cards__item__text__title, .section__title {
     font-size: 2.5rem !important;
   }
 
-  .where__num, .section__title {
+  .where__num {
     font-size: 3.75rem !important;
   }
 }
 @media (max-width : 991.98px) {
-  .section__subtitle, .section__text__title {
-    font-size: 1.875rem !important;
+  .section__subtitle {
+    font-size: 1.5rem !important;
   }
 
-  .section__title {
-    font-size: 2.1875rem !important;
+  .section__title, .section__text__title {
+    font-size: 1.875rem !important;
   }
 }
 .btn-main, .btn-second, .btn-social {
@@ -201,6 +201,10 @@ html[lang=ar] body {
   font-family: "dubai", sans-serif, var(--bs-font-sans-serif);
 }
 
+.container {
+  max-width: 75%;
+}
+
 .btn-social, .btn-second, .btn-main {
   cursor: pointer;
   transition: all cubic-bezier(0.895, 0.03, 0.685, 0.22);
@@ -226,8 +230,7 @@ html[dir=rtl] .btn-main {
 }
 .btn-main.large {
   color: var(--main);
-  font-size: 30px;
-  padding: 10px 50px;
+  padding: 0.7rem 3rem;
   -webkit-border-radius: 50px;
   -o-border-radius: 50px;
   -ms-border-radius: 50px;
@@ -411,6 +414,10 @@ html[dir=ltr] .section__text {
   min-height: calc(100vh - 94px);
 }
 
+.who .card .title {
+  min-height: 80px;
+}
+
 .side-word {
   position: absolute;
   top: 50%;
@@ -424,7 +431,7 @@ html[dir=ltr] .section__text {
   height: 100%;
 }
 .side-word img {
-  max-width: 100%;
+  width: 75%;
   height: auto;
 }
 
@@ -434,11 +441,7 @@ header {
   position: sticky;
   z-index: 99999;
   top: 0;
-  -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
-  -o-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
-  -ms-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
+  border-bottom: 1px solid #ccc;
 }
 header .navigation {
   padding: 1.5625rem 0;
@@ -644,7 +647,7 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
 }
 .carousel .owl-nav i {
   color: var(--bs-white);
-  font-size: 250px;
+  font-size: 100px;
 }
 @media (max-width : 767.98px) {
   .carousel .owl-nav {
@@ -867,6 +870,7 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
 
 .who {
   min-height: 50vh;
+  position: relative;
 }
 .who a {
   text-decoration: none;

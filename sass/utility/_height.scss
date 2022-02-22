@@ -4,3 +4,6 @@
        min-height: calc(#{$i * $daseHeight + 'vh'} - 94px);
     }
 }
+.who .card .title{
+    min-height: 80px;
+}

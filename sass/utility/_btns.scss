@@ -24,8 +24,8 @@
     @extend %base-btn;
     &.large{
         color: get(main);
-        font-size: 30px;
-        padding:10px 50px;
+        @extend %fs-large_desktop-xl;
+        padding: .7rem 3rem;
         @include borderRadius(50px);
         
         @extend %center-g;

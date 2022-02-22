@@ -46,7 +46,7 @@
             }
             i{
                 color: get(white);
-                font-size: 250px;
+                font-size: 100px;
             }
             @include breakpoint(tablet,max){
                 display: none;

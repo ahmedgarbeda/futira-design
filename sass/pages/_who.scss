@@ -1,6 +1,7 @@
 @use "./../tools" as *;
 .who {
     min-height: 50vh;
+    position: relative;
     a {
         text-decoration: none;
     }

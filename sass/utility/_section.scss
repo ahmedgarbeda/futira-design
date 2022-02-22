@@ -2,8 +2,8 @@
 .section{
     font-weight: 300;
     &__title{
-        @extend %fs-large_desktop-60;
-        @extend %fs-desktop-35;
+        @extend %fs-large_desktop-40;
+        @extend %fs-desktop-30;
         width: fit-content;
         display: inline-block;
         color: get(main);
@@ -18,8 +18,8 @@
         }
     }
     &__subtitle{
-        @extend %fs-large_desktop-35;
-        @extend %fs-desktop-30;
+        @extend %fs-large_desktop-30;
+        @extend %fs-desktop-24;
         @extend %text-trans-cap;
         &.color-white{
             color: get(white);
@@ -70,7 +70,7 @@
         p{
             line-height: 1.9;
             color: get(main);
-            @extend %fs-large_desktop-40;
+            @extend %fs-large_desktop-30;
             
         }
         &.p-22{

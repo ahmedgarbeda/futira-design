@@ -6,7 +6,8 @@ header{
     position: sticky;
     z-index: 99999;
     top: 0;
-    @include boxShadow(0 0 5px 5px rgba(black , .125));
+    border-bottom: 1px solid #ccc;
+    // @include boxShadow(0 0 5px 5px rgba(black , .125));
     //background-color:  get(main);
     .navigation {
         @extend %center-f;
