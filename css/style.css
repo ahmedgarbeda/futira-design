@@ -114,7 +114,7 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 1.5rem !important;
   }
 
-  .section__text__title, .section__text.p-30 p {
+  .where__text, .where__num__text, .section__text__title, .section__text.p-30 p {
     font-size: 1.875rem !important;
   }
 
@@ -126,7 +126,7 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 2.5rem !important;
   }
 
-  .section__title {
+  .where__num, .section__title {
     font-size: 3.75rem !important;
   }
 }
@@ -992,7 +992,7 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
   border-bottom: 1px solid var(--main);
 }
 .when .accordion .accordion-item .accordion-body__item__slide {
-  width: 50%;
+  width: 30%;
   margin-top: 5px;
 }
 .when .accordion .accordion-item .accordion-body__item__slide__seprator {
@@ -1009,7 +1009,38 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
   padding: 20px;
 }
 .where__text {
-  padding: 50px;
+  padding: 50px 80px;
+  color: var(--bs-white);
+  font-weight: 300;
+  text-align: center;
+}
+.where__num {
+  color: var(--bs-white);
+  font-weight: 300;
+}
+html[dir=rtl] .where__num {
+  text-align: left;
+}
+html[dir=ltr] .where__num {
+  text-align: right;
+}
+.where__num__text {
+  color: var(--bs-white);
+  font-weight: 300;
+}
+.where-modal .modal-content {
+  -webkit-border-radius: 50px;
+  -o-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  background-image: var(--gradientLTR);
+}
+.where__card img {
+  margin-bottom: 20px;
+}
+.where__card .color-main p {
+  font-weight: 600;
 }
 
 /*# sourceMappingURL=style.css.map */

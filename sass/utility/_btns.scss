@@ -31,7 +31,7 @@
         @extend %center-g;
     }
     &:hover{
-        //background-color: get(second);
+        
     }
     &.start{
         align-self: start;
@@ -43,7 +43,7 @@
     color: get(main);
     @extend %base-btn;
     &:hover{
-        //background-color: get(second);
+        
     }
 }
 .btn-social{

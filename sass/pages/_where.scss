@@ -4,10 +4,42 @@
     background-image: url(image('Asset 38.png'));
     background-repeat: no-repeat;
     background-position: center;
-    //@extend %center-f
     padding: 20px;
     &__text{
-        padding: 50px;
-        @extend %center-f-column
+        padding: 50px 80px;
+        @extend %center-f-column;
+        color: get(white);
+        @extend %fs-large_desktop-30;
+        font-weight: 300;
+        text-align: center;
+    }
+    &__num{
+        color: get(white);
+        font-weight: 300;
+        @extend %fs-large_desktop-60;
+        @include dirs((
+            text-align: right
+        ));
+        &__text{
+            color: get(white);
+            @extend %fs-large_desktop-30;
+            font-weight: 300;
+        }
+    }
+    &-modal{
+        .modal-content{
+            @include borderRadius(50px);
+            background-image: get(gradientLTR);
+        }
+    }
+    &__card{
+        img{
+            margin-bottom: 20px ;
+        }
+        .color-main{
+            p{
+                font-weight: 600;
+            }
+        }
     }
 }

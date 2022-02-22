@@ -601,7 +601,7 @@
                     <div class="modal-body ">
                         <div class="row">
                             <div class="col-ms-12 col-md-12 col-lg-5 center">
-                                <img src="images/Asset 41.png" class="img-fluid" alt="">
+                                <img src="images/Asset 410.png" class="img-fluid" alt="">
                             </div>
                             <div class="col-ms-12 col-md-12 col-lg-7 center">
                                 <div class="section__text px-4 py-5 p-18 p-white">
@@ -636,14 +636,14 @@
             <img src="images/where_en.png" alt="">
         </div>
         <div class="container d-flex justify-content-between flex-column min-height-100 ">
-            <div class="row">
-                <div class="col-sm-12 col-md-5">
-                    <span class="where__num">57%</span>
+            <div class="row p-3">
+                <div class="col-sm-12 col-md-5 where__num">
+                    <span class="">57%</span>
                 </div>
                 <div class="col center">
                     <img src="./images/Asset 45.png" alt="">
                 </div>
-                <div class="col-sm-12 col-md-5">
+                <div class="col-sm-12 col-md-5 ">
                     <span class="where__num__text">OF AFRICA DOES NOT HAVE INTERNE</span>
                 </div>
             </div>
@@ -653,10 +653,79 @@
                     around the globe shows that almost half the world 
                     and over 57% of Africa does not have internet.
                 </p>
-                <button class="btn-main large"> learn more</button>
+                <button class="btn-main large" data-bs-toggle="modal" data-bs-target="#where-modal"> learn more</button>
             </div>
         </div>
-        
+        <div class="section modal where-modal fade p-5" id="where-modal" tabindex="-1" aria-labelledby="modal-title"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered what__modal modal-dialog-centered modal-xl">
+            <div class="modal-content where__modal__content">
+                <div class="modal-header">
+                    <h5 id="modal-title"></h5>
+                    <button class="what__modal__close" data-bs-dismiss="modal" aria-label="Close"> <i
+                            class="fal fa-times"></i> </button>
+                </div>
+                <div class="modal-body p-0 ">
+                    <div class="row">
+                        <div class="col-ms-12 col-md-12 col-lg-5 center">
+                            <img src="images/Asset 41.png" class="img-fluid" alt="">
+                        </div>
+                        <div class="col-ms-12 col-md-12 col-lg-7 center">
+                            <div class="section__text p-18 p-main">
+                                <p class="mt-2 me-4">
+                                    This is not getting better through the introduction of the 
+                                    traditional generations of mobile telephones. The reason 
+                                    is simple: the infrastructure is expensive. The main 
+                                    concept of a telephone network is in the presence of a 
+                                    central office that routes the calls or the internet packets. 
+                                    These central offices are expensive; so expensive that 
+                                    should one try to cover all Africa with the current central 
+                                    office technology, one will never recover their investment. 
+                                    This is because of the low density of the population. The 
+                                    solution is to decentralize the central office through 
+                                    blockchain technology for the user data and smaller 
+                                    switches for the routing of the data. The Inovatian Group 
+                                    of Companies (www.inovatian.com) were founded to 
+                                    realize this dream. They have worked diligently since 
+                                    2015 to reduce the infrastructure cost. They did this 
+                                    through a number of innovations:
+                                </p>
+                                <div class="row">
+                                    <div class="col-4 where__card">
+                                        <img src="./images/Asset 44.png" alt=""class="img-fluid">
+                                        <div class="color-main">
+                                            <p>
+                                                Using Higher
+                                                4G Towers 
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 where__card">
+                                        <img src="./images/Asset 430.png" alt=""class="img-fluid">
+                                        <div class="color-main">
+                                            <p>
+                                                Using Mesh WiFi to cover the coverage gaps
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <div class="col-4 where__card">
+                                        <img src="./images/Asset 42.png" alt="" class="img-fluid">
+                                        <div class="color-main">
+                                            <p>
+                                                Using
+                                                BlockChain
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
     </section>
     <section class="when position-relative background-main min-height-100">
         <div class="side-word">
@@ -1010,6 +1079,7 @@
             </div>
         </div>
     </div>
+
     <script src="js/pro.min.js"></script>
     <script src="js/bootstrap.min.js"></script>
     <script src="vendor/jquery/jquery.min.js"></script>

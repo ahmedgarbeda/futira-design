@@ -79,7 +79,6 @@ $(document).ready(function(){
         $(ele).on('click' , function(){
             $($(this).data('target')).slideToggle('slow');
         })
-        console.log($(ele).data('target'));
     });
 
 })
