@@ -1,1 +1,59 @@
-@use  "./../tools" as *;
+@use "./../tools" as *;
+.who {
+    min-height: 50vh;
+    a {
+        text-decoration: none;
+    }
+    .card {
+        margin-top: 25px;
+        border: 0;
+        color: get(white);
+        transition: all 0.3s ease-in-out;
+        img {
+            filter: grayscale(1);
+        }
+        .title {
+            font-size: 0.65rem;
+            background-color: get(main);
+            h4 {
+                font-size: 1rem !important;
+            }
+        }
+        &:hover {
+            img {
+                filter: grayscale(0);
+            }
+            .title {
+                background: get(gradientLTR);
+            }
+        }
+    }
+    .who-modal{
+        background: rgb(105 50 212 / 75%);
+        z-index: 9999999;
+    }
+    .who__modal__content {
+        position: relative;
+        border-radius: 3rem;
+        border: none;
+        .modal-header {
+            position: absolute;
+            right: 0;
+            z-index: 50;
+        }
+        .modal-body {
+            padding: 0;
+            overflow: hidden;
+        }
+        h3 {
+            color: get(main);
+        }
+        .position {
+            color: get(main);
+            font-weight: 400;
+        }
+        p {
+            color: get(gradientLTR);;
+        }
+    }
+}

@@ -55,29 +55,21 @@ $borderRadius :.125rem; // 7px
 //*************************************************************//
 //                           VARIABLES                         // 
 // ************************************************************//
-// -webkit-linear-gradient(right, var(--second), var(--second-light))
+
 
 $darkenFactory : 10%;
 $lightenFactory : 10%;
-$main :  #6932D4 ; //6932D4
-$yellow :#DB8934; //DB8934  -- E7BD4C
-// $third : #82009f;
-// $forth : #f7345e;
+$main :  #6932D4 ; 
+$yellow :#DB8934;
 $cssVars:(
     main  : $main,
     yellow : $yellow,
     gradientLTR:  -webkit-linear-gradient( bottom right,  var(--yellow-light) , var(--yellow)), 
     gradientRTL:  -webkit-linear-gradient(bottom left, var(--yellow-light) var(--yellow)), 
-    // third  : $third,
-    // forth  : $forth,
     main-dark  : darken($main,$darkenFactory),
     yellow-dark :  darken($yellow,$darkenFactory),
-    // third-dark  : darken($third,$darkenFactory),
-    // forth-dark  : darken($forth,$darkenFactory),
     main-light  : lighten($main,$lightenFactory),
     yellow-light : #E7BD4C,
-    // third-light  : lighten($third,$lightenFactory),
-    // forth-light  : lighten($forth,$lightenFactory),
 
 );
 $sassVars :(
@@ -88,8 +80,6 @@ $sassVars :(
     marginY :$marginY, // 50px 
     marginX :$marginX, //0
     borderRadius :$borderRadius,
-    card-radius : 1.5625rem, // 25px
-    hero-card-radius : 1.25rem, // 20px
     imagesPath : $imagesPath,
     fontsPath :$fontsPath,
     gray:var(--bs-gray-100),
