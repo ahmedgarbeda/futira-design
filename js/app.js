@@ -68,7 +68,6 @@ $(document).ready(function(){
                 text.style.display = "none"
                 children[0].style.alignSelf='unset'
                 this.classList.remove(this.dataset.class)
-
             }
             newParent.append(img)
             Flip.from(state,{duration:.8 , ease: 'power1.easeInOut' ,scale:true})
@@ -80,5 +79,17 @@ $(document).ready(function(){
             $($(this).data('target')).slideToggle('slow');
         })
     });
+    function counter (){
+        const timeDifference = new Date('25 feb, 2022 23:59:59').getTime() - new Date().getTime();
+        const day = timeDifference / (1000 * 60 * 60 *24 )
+        const hour=  timeDifference % (1000 * 60 * 60 *24 ) / (1000 * 60 * 60) ;
+        const minute = timeDifference % (1000 * 60 * 60  ) / (1000 * 60 )
+        document.querySelector('#day').innerText = Math.floor(day);
+        document.querySelector('#hour').innerText = Math.floor(hour);
+        document.querySelector('#minute').innerText = Math.floor(minute)
+    }
+    counter()
+    const interval = setInterval(counter,60000)
+    
 
 })
