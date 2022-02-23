@@ -259,6 +259,16 @@ html[dir=rtl] .btn-main {
   background-color: transparent;
   outline: 1px solid var(--main);
 }
+.btn-second.start {
+  align-self: start;
+}
+.btn-second.border-50 {
+  -webkit-border-radius: 50px;
+  -o-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+}
 
 .btn-social {
   background: var(--main);

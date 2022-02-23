@@ -52,7 +52,15 @@
         background-color: transparent;
         outline:1px solid get(main);
     }
-    
+
+    &.start{
+        align-self: start;
+    }
+    &.border{
+        &-50{
+            @include borderRadius(50px);
+        }
+    }
     
 }
 .btn-social{
