@@ -4,22 +4,47 @@
     .accordion-item{ 
         border:none;
         border-radius: 0;
-        border-bottom: 2px solid get(white);
-        //
-        &:first-child{
-            border-top: 2px solid get(white);
+        &.border-white{
+            border-bottom: 2px solid get(white);
+            &:first-child{
+                border-top: 2px solid get(white);
+            }
+            .accordion-header{
+                button{
+                    color: get(white);
+                    &:not(.collapsed){
+                        color: get(white);
+                        background-image: get(gradientLTR);
+                    }
+                }
+            }
         }
-
+        &.border-main{
+            border-bottom: 2px solid get(main);
+            &:first-child{
+                border-top: 2px solid get(main);
+            }
+            .accordion-header{
+                button{
+                    color: get(main);
+                    &:not(.collapsed){
+                        color: get(white);
+                        background-color: get(main);
+                    }
+                }
+            }
+        }
+        
         background-color: transparent;
         .accordion-header{
             button{
                 background-color: transparent;
                 padding: 30px 20px ;
-                color: white;
+                
                 @extend %center-f;
                 &:not(.collapsed){
                     color: white;
-                    background-image: get(gradientLTR);
+                    
                     &::after{
                         content: none;
                     }

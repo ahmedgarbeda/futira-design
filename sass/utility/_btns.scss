@@ -47,11 +47,9 @@
         padding: .5rem 1.5rem;
         @include borderRadius(7px);
         @extend %center-g;
-       
     }
     &.outline-main{
         background-color: transparent;
-        //border: 1px solid get(main);
         outline:1px solid get(main);
     }
     
