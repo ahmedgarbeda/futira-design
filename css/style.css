@@ -8,6 +8,7 @@
   --main-light: #885cdd;
   --yellow-light: #E7BD4C;
   --overlay-main: rgba(105, 50, 212, 0.75);
+  --overlay-main-25: rgba(105, 50, 212, 0.25);
 }
 
 @font-face {
@@ -95,7 +96,7 @@ header .navigation__menu > li a, .section__text__subtitle {
 }
 
 @media (min-width : 991.99px) {
-  .when .accordion .accordion-item .accordion-body__item__slide {
+  .accordion .accordion-item .accordion-body__item__slide {
     font-size: 0.875rem !important;
   }
 
@@ -111,7 +112,7 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 1.25rem !important;
   }
 
-  .what__cards__item__text__body p, .btn-main.large {
+  .what__cards__item__text__body p, .btn-main.large, .btn-second.large {
     font-size: 1.375rem !important;
   }
 
@@ -127,7 +128,7 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 2.1875rem !important;
   }
 
-  .when .accordion .accordion-item .accordion-header button, .what__cards__item__text__title, .section__title {
+  .what__cards__item__text__title, .accordion .accordion-item .accordion-header button, .section__title {
     font-size: 2.5rem !important;
   }
 
@@ -148,11 +149,11 @@ header .navigation__menu > li a, .section__text__subtitle {
   text-decoration: none;
 }
 
-.section__title, .section__subtitle, .section__text__title, .section__text__subtitle, .btn-main, .btn-second, .btn-social {
+.how form .input-container option, .section__title, .section__subtitle, .section__text__title, .section__text__subtitle, .btn-main, .btn-second, .btn-social {
   text-transform: capitalize;
 }
 
-.carousel__slide__label, .carousel__slide__date__label {
+.how form .input-container h5, .carousel__slide__label, .carousel__slide__date__label {
   text-transform: uppercase;
 }
 
@@ -167,7 +168,7 @@ header .navigation__menu > li a, .section__text__subtitle {
   transform: translate(-50%, -50%);
 }
 
-.when, .when .accordion .accordion-item .accordion-body__item__slide, .what__modal__close, .carousel .item.color-main, .carousel .item.color-gradient, .carousel__slide, .carousel__slide__date, .center, .center-column, header .navigation, header .navigation__toggle button, header .navigation__menu, header .navigation__menu__mobile, .side-word {
+.how form, .when, .what__modal__close, .carousel .item.color-main, .carousel .item.color-gradient, .carousel__slide, .carousel__slide__date, .center, .center-column, .accordion .accordion-item .accordion-header button, .accordion .accordion-item .accordion-body__item__slide, header .navigation, header .navigation__toggle button, header .navigation__menu, header .navigation__menu__mobile, .side-word {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -180,14 +181,14 @@ header .navigation__menu > li a, .section__text__subtitle {
   flex-direction: column;
 }
 
-.who .card .title, .icon-card {
+.how form .input-container .center, .who .card .title, .icon-card {
   display: flex;
   justify-content: center;
   align-items: flex-start;
   flex-direction: column;
 }
 
-.btn-main.large {
+.btn-main.large, .btn-second.large {
   display: grid;
   place-items: center;
 }
@@ -246,15 +247,19 @@ html[dir=rtl] .btn-main {
   align-self: start;
 }
 
-.btn-second {
-  background-color: var(--bs-gray-100);
-  -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
-  -o-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
-  -ms-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
-  -moz-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
-  box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
-  color: var(--main);
+.btn-second.large {
+  padding: 0.5rem 1.5rem;
+  -webkit-border-radius: 7px;
+  -o-border-radius: 7px;
+  -ms-border-radius: 7px;
+  -moz-border-radius: 7px;
+  border-radius: 7px;
 }
+.btn-second.outline-main {
+  background-color: transparent;
+  outline: 1px solid var(--main);
+}
+
 .btn-social {
   background: var(--main);
   border: 1px solid var(--main);
@@ -596,6 +601,75 @@ header .navigation__menu__mobile {
 }
 .icon-card__text p {
   color: var(--bs-white);
+}
+
+.accordion .accordion-item {
+  border: none;
+  border-radius: 0;
+  border-bottom: 2px solid var(--bs-white);
+  background-color: transparent;
+}
+.accordion .accordion-item:first-child {
+  border-top: 2px solid var(--bs-white);
+}
+.accordion .accordion-item .accordion-header button {
+  background-color: transparent;
+  padding: 30px 20px;
+  color: white;
+}
+.accordion .accordion-item .accordion-header button:not(.collapsed) {
+  color: white;
+  background-image: var(--gradientLTR);
+}
+.accordion .accordion-item .accordion-header button:not(.collapsed)::after {
+  content: none;
+}
+.accordion .accordion-item .accordion-header button:not(.collapsed) i {
+  -webkit-transform: rotate(180deg);
+  -o-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
+  -moz-transform: rotate(180deg);
+  transform: rotate(180deg);
+}
+.accordion .accordion-item .accordion-header button:focus {
+  box-shadow: none;
+}
+.accordion .accordion-item .accordion-header button::after {
+  content: none;
+}
+.accordion .accordion-item .accordion-header button i {
+  -webkit-transition: transform 0.1s ease;
+  -o-transition: transform 0.1s ease;
+  -ms-transition: transform 0.1s ease;
+  -moz-transition: transform 0.1s ease;
+  transition: transform 0.1s ease;
+}
+html[dir=rtl] .accordion .accordion-item .accordion-header button i {
+  margin-right: auto;
+}
+html[dir=ltr] .accordion .accordion-item .accordion-header button i {
+  margin-left: auto;
+}
+.accordion .accordion-item .accordion-body {
+  background-color: var(--bs-white);
+  color: var(--main);
+}
+.accordion .accordion-item .accordion-body__item {
+  padding: 20px;
+}
+.accordion .accordion-item .accordion-body__item:not(:last-of-type) {
+  border-bottom: 1px solid var(--main);
+}
+.accordion .accordion-item .accordion-body__item__slide {
+  width: fit-content;
+  margin-top: 5px;
+}
+.accordion .accordion-item .accordion-body__item__slide__seprator {
+  height: 3px;
+  background-image: var(--gradientLTR);
+  flex-grow: 1;
+  margin: 0 20px;
+  min-width: 250px;
 }
 
 .carousel .item {
@@ -977,47 +1051,6 @@ html[dir=ltr] .modal-header {
 .when {
   padding: 50px 20px;
 }
-.when .accordion .accordion-item {
-  border: none;
-  border-radius: 0;
-  border-bottom: 2px solid var(--bs-white);
-  background-color: transparent;
-}
-.when .accordion .accordion-item:first-child {
-  border-top: 2px solid var(--bs-white);
-}
-.when .accordion .accordion-item .accordion-header button {
-  background-color: transparent;
-  height: 80px;
-  color: white;
-}
-.when .accordion .accordion-item .accordion-header button:not(.collapsed) {
-  color: white;
-  background-image: var(--gradientLTR);
-}
-.when .accordion .accordion-item .accordion-header button:focus {
-  box-shadow: none;
-}
-.when .accordion .accordion-item .accordion-body {
-  background-color: var(--bs-white);
-  color: var(--main);
-}
-.when .accordion .accordion-item .accordion-body__item {
-  padding: 20px;
-}
-.when .accordion .accordion-item .accordion-body__item:not(:last-of-type) {
-  border-bottom: 1px solid var(--main);
-}
-.when .accordion .accordion-item .accordion-body__item__slide {
-  width: 30%;
-  margin-top: 5px;
-}
-.when .accordion .accordion-item .accordion-body__item__slide__seprator {
-  height: 3px;
-  background-image: var(--gradientLTR);
-  flex-grow: 1;
-  margin: 0 20px;
-}
 
 .where {
   background-image: url("../images/Asset 38.png");
@@ -1068,6 +1101,69 @@ html[dir=ltr] .where__num {
 .media .card .title h4 {
   font-size: 1rem !important;
   font-weight: 400;
+}
+.how form {
+  -webkit-border-radius: 50px;
+  -o-border-radius: 50px;
+  -ms-border-radius: 50px;
+  -moz-border-radius: 50px;
+  border-radius: 50px;
+  background-color: #fff;
+  padding: 90px 0 25px;
+  overflow: hidden;
+  font-family: "Nexa";
+  color: var(--main);
+  width: 80%;
+  margin: auto;
+}
+.how form .input-container {
+  width: 90%;
+}
+.how form .input-container .row {
+  margin-bottom: 20px;
+}
+.how form .input-container h5 {
+  font-weight: 600;
+  margin: 0;
+}
+.how form .input-container input:not([type=reset], [type=submit]), .how form .input-container select {
+  -webkit-border-radius: 10px;
+  -o-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -moz-border-radius: 10px;
+  border-radius: 10px;
+  border-color: var(--main);
+  padding: 0.6rem 1.2rem;
+  line-height: 1.5;
+  color: var(--main);
+  font-family: "Nexa";
+}
+.how form .input-container input:not([type=reset], [type=submit]):focus, .how form .input-container select:focus {
+  -webkit-box-shadow: 0 0 0 0.25rem var(--overlay-main-25);
+  -o-box-shadow: 0 0 0 0.25rem var(--overlay-main-25);
+  -ms-box-shadow: 0 0 0 0.25rem var(--overlay-main-25);
+  -moz-box-shadow: 0 0 0 0.25rem var(--overlay-main-25);
+  box-shadow: 0 0 0 0.25rem var(--overlay-main-25);
+}
+.how form .input-container input:not([type=reset], [type=submit])::-moz-placeholder, .how form .input-container select::-moz-placeholder {
+  color: var(--main);
+  text-transform: capitalize;
+  font-family: "Nexa";
+  font-size: 1rem;
+}
+.how form .input-container input:not([type=reset], [type=submit])::placeholder, .how form .input-container select::placeholder {
+  color: var(--main);
+  text-transform: capitalize;
+  font-family: "Nexa";
+  font-size: 1rem;
+}
+.how form .input-container input[type=reset] {
+  margin-inline-end: 20px;
+}
+.how form .input-container a {
+  text-decoration: none;
+  font-weight: 600;
+  color: var(--main);
 }
 
 /*# sourceMappingURL=style.css.map */

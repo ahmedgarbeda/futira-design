@@ -58,13 +58,11 @@ $(document).ready(function(){
             if(children.includes(img)){
                 newParent = toElement
                 text.style.display = "block";
-                //text.style.height = 80+ "%" ;
                 this.classList.add(this.dataset.class)
                 children[0].style.alignSelf='flex-start'
 
             }else{
                 newParent = this 
-                //text.style.height = 0 + '%'
                 text.style.display = "none"
                 children[0].style.alignSelf='unset'
                 this.classList.remove(this.dataset.class)

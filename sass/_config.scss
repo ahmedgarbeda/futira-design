@@ -71,6 +71,7 @@ $cssVars:(
     main-light  : lighten($main,$lightenFactory),
     yellow-light : #E7BD4C,
     overlay-main: rgba($main , .75),
+    overlay-main-25: rgba($main , .25),
 );
 $sassVars :(
     white:var(--bs-white),

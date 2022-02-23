@@ -38,13 +38,24 @@
     }
 }
 .btn-second{
-    background-color: get(gray);
-    @include boxShadow(0 0 5px 5px rgba(black, .125));
-    color: get(main);
     @extend %base-btn;
     &:hover{
         
     }
+    &.large{
+        @extend %fs-large_desktop-xl;
+        padding: .5rem 1.5rem;
+        @include borderRadius(7px);
+        @extend %center-g;
+       
+    }
+    &.outline-main{
+        background-color: transparent;
+        //border: 1px solid get(main);
+        outline:1px solid get(main);
+    }
+    
+    
 }
 .btn-social{
     background: get(main);

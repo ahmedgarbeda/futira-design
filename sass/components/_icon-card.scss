@@ -13,9 +13,6 @@
         }
     }
     &__text{
-        //max-width: 350px;
-        //padding:20px 0; 
-        //flex-grow: 1;
         p{
             @extend %fs-large_desktop-nor;
             color: get(white);

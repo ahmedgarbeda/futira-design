@@ -1,0 +1,70 @@
+@use  './../tools' as * ;
+
+
+.how{
+    form { 
+        @include borderRadius(50px);
+        background-color: #fff;
+        padding: 90px 0 25px;
+        overflow: hidden;
+        @extend %center-f;
+        font-family: 'Nexa';
+        color: get(main);
+        width: 80%;
+        margin: auto;
+        .input-container{
+            width: 90%;
+            .row{
+                margin-bottom: 20px;
+            }
+            h5{
+                @extend %text-trans-upper;
+                font-weight: 600    ;
+                margin: 0;
+                
+            }
+            input:not([type='reset'],[type='submit']) , select{
+                @include borderRadius(10px);
+                border-color: get(main);
+                padding: .6rem 1.2rem;
+                line-height: 1.5;
+                color: get(main);
+                font-family: 'Nexa';
+
+                &:focus{
+                    @include boxShadow(0 0 0 .25rem get(overlay-main-25))
+                }
+                &::-moz-placeholder{
+                    color: get(main);
+                    text-transform: capitalize;
+                    font-family: 'Nexa';
+                    font-size: 1rem
+
+                }
+                &::placeholder {
+                    color: get(main);
+                    text-transform: capitalize;
+                    font-family: 'Nexa';
+                    font-size: 1rem
+                }
+            }
+            input[type='reset']{
+                
+                margin-inline-end:20px 
+                
+            }
+            option{
+                @extend %text-trans-cap;
+            }
+            .center{
+                @extend %center-f-column-start
+            }
+            a{
+                text-decoration: none;
+                font-weight: 600;
+                color: get(main);
+            }
+        }
+
+    }
+}

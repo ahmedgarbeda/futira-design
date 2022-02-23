@@ -30,7 +30,6 @@
         display: flex;
         align-content: center;
         flex-direction: column;
-        //padding-top: 50px;
         &.padding-start{
             padding-inline-start:120px;
             @include breakpoint(tablet,max){
