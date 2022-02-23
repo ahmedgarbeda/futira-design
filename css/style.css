@@ -1196,4 +1196,68 @@ html[dir=ltr] .where__num {
   color: var(--main);
 }
 
+.footer {
+  background: var(--gradientLTR);
+}
+.footer .title {
+  color: var(--main);
+  font-weight: 300;
+  display: flex;
+  flex-direction: row;
+}
+.footer .title::after {
+  content: "";
+  flex: 1 1;
+  border-bottom: 0.0625rem solid #fff;
+  margin: auto 10px;
+}
+.footer .quick-link {
+  margin-inline-start: 6rem;
+}
+.footer .quick-link .nav-link {
+  color: #fff;
+  width: 5rem;
+}
+.footer .Subscribe h5 {
+  font-size: 1rem;
+  font-weight: 400;
+  color: var(--main);
+}
+.footer .Subscribe .input-subscribe {
+  border: none;
+  font-size: 0.75rem;
+  color: #ccc;
+  padding: 0.65rem 0.75rem;
+  border-radius: 0.5rem;
+}
+.footer .Subscribe .send {
+  border-radius: 0.5rem;
+  font-size: 0.75rem;
+  padding: 0.6rem 0.75rem;
+  background: var(--main);
+  border-color: var(--main);
+}
+.footer .Subscribe p {
+  font-size: 0.55rem;
+  color: #fff;
+  font-weight: 100;
+}
+.footer .Subscribe .download {
+  background: transparent;
+  border-color: #fff;
+  color: #fff;
+  padding: 0.6rem 0.75rem;
+  font-size: 0.75rem;
+  border-radius: 0.5rem;
+}
+.footer .Subscribe .social-icon i {
+  font-size: 1.3rem;
+  color: #fff;
+}
+.footer .copy-right p {
+  font-size: 1rem;
+  font-weight: 100;
+  color: #fff;
+}
+
 /*# sourceMappingURL=style.css.map */
