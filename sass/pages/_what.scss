@@ -1,5 +1,8 @@
 @use  "./../tools" as *;
 .what{
+    @include breakpoint(tablet,max){
+        margin-top: 20px;
+    }
     &__modal{
         //max-width: 950px;
         

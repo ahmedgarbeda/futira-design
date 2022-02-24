@@ -77,6 +77,9 @@
                     border-bottom: 1px solid get(main);
                 }
                 padding: 20px;
+                @include breakpoint(tablet,max){
+                    padding: 5px;
+                }
                 &__slide{
                     width: fit-content;
                     @extend %fs-large_desktop-sm;
@@ -88,6 +91,9 @@
                         flex-grow: 1;
                         margin: 0 20px;
                         min-width: 250px;
+                        @include breakpoint(tablet,max){
+                            min-width: 50px;
+                        }
                     }
                 }
             }

@@ -15,6 +15,8 @@
 
 $(document).ready(function(){
     const Dir = document.documentElement.dir === 'rtl' 
+    const DOM_StyleElement = document.createElement('style')
+    document.querySelector('head').append(DOM_StyleElement)
     gsap.registerPlugin(Flip)
     document.querySelectorAll('.navigation__menu li a').forEach(function(ele){
         ele.addEventListener('click',function(e){
@@ -89,5 +91,22 @@ $(document).ready(function(){
     counter()
     const interval = setInterval(counter,60000)
     
+    function word(){
+        document.querySelectorAll('.word').forEach(function( ele){
+            //ele.style.width = ele.parentNode.offsetHeight  + "px";
+            // ele.style.top = Math.floor((ele.parentNode.offsetHeight - 100) /2.2 ) + "px";
+            // ele.style.left = ele.offsetHeight * -1 + "px";
+            const availableSpace =  Math.floor((document.body.offsetWidth - document.querySelector('.container').offsetWidth) /2);
+            //const siz = availableSpace < 200 ? availableSpace : 200;
+            const siz = availableSpace;
+            ele.style.height =` ${availableSpace}px `;
+            //ele.style.fontSize =` ${siz}px `;
+            //ele.style.transform = `translate(-60%, ${0}px) rotate(-90deg)`
+            console.log(document.body.offsetWidth , '-', ele.parentNode.offsetWidth , '/2' , '=' , availableSpace );
+            //console.log((document.body.clientWidth - ele.parentNode.offsetWidth) /2 );
+        })
+    }
+    // word()
+    // window.addEventListener('resize',word)
 
 })

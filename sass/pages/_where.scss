@@ -4,7 +4,7 @@
     background-image: url(image('Asset 38.png'));
     background-repeat: no-repeat;
     background-position: center;
-    padding: 20px;
+    padding-top: 20px;
     &__text{
         @extend %center-f-column;
         color: get(white);
@@ -13,6 +13,15 @@
         text-align: center;
         margin: 80px auto;
         width: 70%;
+        @include breakpoint(tablet,max){
+            width: 90%;
+            margin: 20px auto;
+        }
+    }
+    .justify-content-between{
+        @include breakpoint(tablet,max){
+            justify-content: start !important;
+        }
     }
     &__num{
         color: get(white);
@@ -21,10 +30,19 @@
         @include dirs((
             text-align: right
         ));
+        @include breakpoint(tablet,max){
+            text-align: center !important
+        }
+        @extend %fs-tablet-40;
         &__text{
             color: get(white);
             font-weight: 300;
+            display: block;
             @extend %fs-large_desktop-30;
+            @extend %fs-tablet-24;
+            @include breakpoint(tablet,max){
+                text-align: center !important
+            }
         }
     }
     &-modal{
@@ -42,6 +60,11 @@
                 font-weight: 600;
                 line-height: 1.5;
             }
+        }
+    }
+    .col{
+        @include breakpoint(tablet,max){
+            display: none;
         }
     }
 }

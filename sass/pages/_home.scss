@@ -16,10 +16,22 @@
             }
             &.two{
                 background-image: url(image('Asset 5.png'));
+                .center{
+                    @include breakpoint(tablet,max){
+                        flex-direction: column;
+                    }
+                    
+                }
             }
         }
+        .last{
+            font-size:80px !important;
 
-
+            @include breakpoint(tablet,max){
+                font-size: 40px !important;
+                align-self: flex-start;
+            }
+        }
     }
     .owl-item img{
         width: auto ;
@@ -75,6 +87,9 @@
     }
     &__slide{
         padding: 0 50px;
+        @include breakpoint(tablet,max){
+            padding: 0
+        }
         @extend %center-f;
         align-items: stretch;
         flex-direction: column;
@@ -82,8 +97,11 @@
             img{
                 @extend %center-p;
                 width: auto !important;
-                @include breakpoint(tablet,max){
+                @include breakpoint(tablet){
                     width: 300px !important;
+                }
+                @include breakpoint(mobile){
+                    display: none !important
                 }
             }
             
@@ -98,6 +116,9 @@
             background: get(main);
             height: 3px;
             margin: 20px;
+            @include breakpoint(tablet,max){
+                display: none
+            }
         }
         &__date{
             @extend %center-f;

@@ -9,6 +9,7 @@
     border: none;
     outline: none;
     padding: 10px 20px;
+
     font-weight: 300;
     
 
@@ -26,6 +27,11 @@
         color: get(main);
         @extend %fs-large_desktop-xl;
         padding: .7rem 3rem;
+        @include breakpoint(tablet,max){
+            padding:  20px;
+            //line-height: 1
+        }
+        @extend %fs-tablet-sm;
         @include borderRadius(50px);
         
         @extend %center-g;

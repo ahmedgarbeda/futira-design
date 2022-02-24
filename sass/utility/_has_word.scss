@@ -1,16 +1,74 @@
 @use  "./../tools" as *;
 
-.side-word{
-    position: absolute;
-    top: 50%;
-    left: 30px;
-    @include transform(translateY(-50%));
-    width: 150px;
-    height: 100%;
-    @extend %center-f;
-    img{
-        width: 75%;
-        height: auto;
-
+.has-word{
+    --width:150px;
+    position: relative;
+    padding-left: var(--width);
+    .side-word{
+        position: absolute;
+        top: 50%;
+        left: 10px;
+        @include transform(translateY(-50%));
+        width: var(--width);
+        height: 100%;
+        @extend %center-f;
+        img{
+            width: 75%;
+            height: auto;
+    
+        }
     }
+}
+$font-size : 200px ;
+.has-word-1{
+    position: relative;
+    // &::before{
+    //     content: attr(data-word);
+    //     font-family: 'Nexa';
+    //     font-weight: 500;
+    //     -webkit-text-stroke: 1px get(main);
+    //     -webkit-text-fill-color: transparent;
+    //     height: 145px;
+    //     width: fit-content;
+    //     position: absolute;
+    //     left: 0;
+    //     top: 0;
+    //     line-height: 1.01;
+    //     font-size: $font-size;
+    //     @extend %text-trans-upper;
+    //     //@include transform(rotate(-90deg) translate(-200px ,-100%));
+    //     //@include transform(rotate(-90deg) translateY(-50%) );
+    //     //@include addPrefix(transform-origin, center);
+    //     overflow: hidden;
+    // }
+
+    .word{  
+        @include breakpoint(mobile){
+            display: none;
+        }
+        font-family: 'Nexa';
+        font-weight: 500;
+        font-size: 10vw;
+        @include transform( translate(200px, 343px) rotate(-90deg));
+        overflow: hidden;
+        text-align: center;
+        @extend %text-trans-upper;
+        //line-height: 1.1;
+        //padding-bottom: 20px;
+        width: fit-content;
+        height: 200px;
+        position: absolute;
+        @extend %center-f;
+        &-main{
+            -webkit-text-stroke: 1px get(main);
+            -webkit-text-fill-color: transparent;
+        }
+        &-white{
+            -webkit-text-stroke: 1px get(white);
+            -webkit-text-fill-color: transparent;
+        }
+        top: 0;
+        left: 0;
+    }
+    
 }
