@@ -503,6 +503,29 @@ html[dir=ltr] .section__text {
   -webkit-text-stroke: 1px var(--bs-white);
   -webkit-text-fill-color: transparent;
 }
+.has-word-1 .container {
+  max-width: 80%;
+}
+@media (max-width : 575.98px) {
+  .has-word-1 .container {
+    max-width: 100%;
+  }
+}
+.has-word-1 .img-decoration {
+  position: absolute;
+  top: 50%;
+  left: -2rem;
+  -webkit-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  transform: translateY(-50%);
+}
+@media (max-width : 575.98px) {
+  .has-word-1 .img-decoration {
+    display: none;
+  }
+}
 
 .overlay-main {
   background-color: var(--overlay-main);

@@ -20,6 +20,7 @@
     }
 }
 $font-size : 200px ;
+
 .has-word-1{
     position: relative;
     // &::before{
@@ -69,6 +70,21 @@ $font-size : 200px ;
         }
         top: 0;
         left: 0;
+    }
+    .container{
+        max-width: 80%;
+        @include breakpoint(mobile,max){
+            max-width: 100%;
+        }
+    }
+    .img-decoration{
+        position: absolute;
+        top: 50%;
+        left: -2rem;
+        @include transform(translateY(-50%));
+        @include breakpoint(mobile,max){
+            display: none;
+        }
     }
     
 }
