@@ -80,9 +80,9 @@ $font-size : 200px ;
     .img-decoration{
         position: absolute;
         top: 50%;
-        left: -2rem;
+        left: 1rem;
         @include transform(translateY(-50%));
-        @include breakpoint(mobile,max){
+        @include breakpoint(750px,max){
             display: none;
         }
     }

@@ -31,7 +31,9 @@ $(document).ready(function(){
     })
     document.querySelector('#mob-toggle').addEventListener('click', function(){
         this.classList.toggle('active')
+        document.querySelector('#mobile_menu').classList.toggle('active');
     })
+    
     $('.owl-carousel').owlCarousel({
         loop:true,
         items:1,
@@ -80,7 +82,7 @@ $(document).ready(function(){
         })
     });
     function counter (){
-        const timeDifference = new Date('25 feb, 2022 23:59:59').getTime() - new Date().getTime();
+        const timeDifference = new Date('1 mar, 2022 23:59:59').getTime() - new Date().getTime();
         const day = timeDifference / (1000 * 60 * 60 *24 )
         const hour=  timeDifference % (1000 * 60 * 60 *24 ) / (1000 * 60 * 60) ;
         const minute = timeDifference % (1000 * 60 * 60  ) / (1000 * 60 )

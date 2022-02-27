@@ -55,7 +55,7 @@
                 &:focus{
                     box-shadow: none;
                 }
-                @extend %fs-large_desktop-40;
+                @extend %fs-large_desktop-24;
                 &::after{
                     content: none;
                 }

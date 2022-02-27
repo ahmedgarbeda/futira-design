@@ -116,7 +116,7 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 1.375rem !important;
   }
 
-  .media .card .title i, .where__text, .section__text.p-24 p {
+  .media .card .title i, .where__text, .accordion .accordion-item .accordion-header button, .section__text.p-24 p {
     font-size: 1.5rem !important;
   }
 
@@ -128,7 +128,7 @@ header .navigation__menu > li a, .section__text__subtitle {
     font-size: 2.1875rem !important;
   }
 
-  .what__cards__item__text__title, .accordion .accordion-item .accordion-header button, .section__title {
+  .what__cards__item__text__title, .section__title {
     font-size: 2.5rem !important;
   }
 
@@ -181,7 +181,7 @@ header .navigation__menu > li a, .section__text__subtitle {
   transform: translate(-50%, -50%);
 }
 
-.how form, .when, .what__modal__close, .carousel .item.color-main, .carousel .item.color-gradient, .carousel__slide, .carousel__slide__date, .center, .center-column, .accordion .accordion-item .accordion-header button, .accordion .accordion-item .accordion-body__item__slide, header .navigation, header .navigation__toggle button, header .navigation__menu, header .navigation__menu__mobile, .has-word .side-word, .has-word-1 .word {
+.how form, .when, .what__modal__close, .carousel .item.color-main, .carousel .item.color-gradient, .carousel__slide, .carousel__slide__date, .center, .center-column, .accordion .accordion-item .accordion-header button, .accordion .accordion-item .accordion-body__item__slide, header .navigation, header .navigation__toggle button, header .navigation__menu, .has-word .side-word, .has-word-1 .word {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -514,14 +514,14 @@ html[dir=ltr] .section__text {
 .has-word-1 .img-decoration {
   position: absolute;
   top: 50%;
-  left: -2rem;
+  left: 1rem;
   -webkit-transform: translateY(-50%);
   -o-transform: translateY(-50%);
   -ms-transform: translateY(-50%);
   -moz-transform: translateY(-50%);
   transform: translateY(-50%);
 }
-@media (max-width : 575.98px) {
+@media (max-width : 750px) {
   .has-word-1 .img-decoration {
     display: none;
   }
@@ -733,13 +733,20 @@ header .navigation__menu > li a {
   text-transform: capitalize;
 }
 header .navigation__menu__mobile {
+  display: flex;
+  align-items: center;
   flex-direction: column;
-  position: absolute;
+  position: fixed;
   top: 0;
-  left: -100%;
+  -webkit-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
   list-style: none;
   padding: 0;
   width: 50vw;
+  height: 100%;
   max-width: 500px;
   min-width: 250px;
   -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
@@ -749,10 +756,37 @@ header .navigation__menu__mobile {
   box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.125);
   background-color: var(--bs-gray-100);
 }
+html[dir=rtl] header .navigation__menu__mobile {
+  left: -100%;
+}
+html[dir=ltr] header .navigation__menu__mobile {
+  right: -100%;
+}
 @media (min-width : 991.98px) {
   header .navigation__menu__mobile {
     display: none;
   }
+}
+html[dir=rtl] header .navigation__menu__mobile.active {
+  left: 0;
+}
+html[dir=ltr] header .navigation__menu__mobile.active {
+  right: 0;
+}
+header .navigation__menu__mobile li:first-child {
+  height: 94px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-bottom: 1px solid var(--yellow);
+  width: 100%;
+}
+header .navigation__menu__mobile li:not(:first-child) {
+  padding: 1rem 1rem;
+}
+header .navigation__menu__mobile li .nav-link {
+  color: var(--main);
+  text-transform: uppercase;
 }
 
 .icon-card {

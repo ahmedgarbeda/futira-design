@@ -106,20 +106,45 @@ header{
                 };
             }
             &__mobile{
-                @extend %center-f;
+                // @extend %center-f;
+                display: flex;
+                align-items: center;
                 flex-direction: column;
-                position: absolute;
+                position: fixed;
                 top: 0;
-                left: -100%;
+                @include transition(all 0.3s ease-in-out);
+                @include dirs((right: -100%));
                 list-style: none;
                 padding: 0;
                 width: 50vw;
+                height: 100%;
                 max-width: 500px;
                 min-width: 250px;
                 @include  boxShadow(0 0 5px 5px rgba(black , .125));
                 background-color: get(gray);
                 @include breakpoint(desktop,min){
                     display: none;
+                }
+                &.active{
+                    @include dirs((right: 0));
+                }
+                li{
+                    &:first-child{
+                        height: 94px;
+                        display: flex;
+                        align-items: center;
+                        justify-content: center;
+                        border-bottom: 1px solid get(yellow);
+                        width: 100%;
+                    }
+                    &:not(:first-child){
+                        padding: 1rem 1rem;
+                        
+                    }
+                    .nav-link{
+                        color: get(main);
+                        text-transform: uppercase;
+                    }
                 }
             }
         }
