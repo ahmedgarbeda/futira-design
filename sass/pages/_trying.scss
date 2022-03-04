@@ -1,0 +1,14 @@
+@use "./../tools" as *;
+
+.trying {
+    min-height: calc( 100vh - 94px);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    background-color: var(--main);
+    h3{
+        color: #fff;
+        font-size: 3rem;
+      }
+  }

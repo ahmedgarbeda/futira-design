@@ -1265,7 +1265,18 @@ html[dir=ltr] .carousel .owl-nav .owl-next {
 .who .who__modal__content p {
   color: var(--gradientLTR);
 }
-
+.trying {
+  min-height: calc( 100vh - 94px);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background-color: var(--main);
+}
+.trying h3{
+  color: #fff;
+  font-size: 3rem;
+}
 .modal-header {
   position: absolute;
   z-index: 50;
